@@ -1,4 +1,3 @@
-# devfest2015
-Material Design Template for DevFest 2015 Season
+# Scrum Gathering China 2016
 
-Demo you can find here: http://vg.am/devfest
+Production: http://scrumgathering.io
