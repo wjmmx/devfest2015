@@ -1,5 +1,10 @@
 {
   "token": {
+    "HOMEPAGE":"回到主页",
+    "REGISTRATION":"注册报名",
+    "Price: 3500 RMB":"原价: 3500元人民币",
+    "Early Bird Price":"早鸟价",
+    "RMB only before July 31!":"元人民币, 仅在7月31日前有效!",
     "TOP":"回到页首",
     "INTRO":"会议介绍",
     "SPEAKERS":"讲师介绍",
