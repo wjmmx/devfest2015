@@ -191,6 +191,30 @@ p {
   transition: all 0.3s ease;
 }
 
+.lang-toggle{
+    top: 6px;
+    width: 98px;
+    height: 45px;
+    z-index: 300;
+
+    position: relative;
+    float: right;
+    padding: 9px 10px;
+    margin-top: 8px;
+    margin-right: 15px;
+    margin-bottom: 8px;
+    background-color: transparent;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.lang-toggle a:link, .lang-toggle a:visited, .lang-toggle a:hover, .lang-toggle a:active{
+    text-decoration: none;
+    color: #fff;
+    outline: none;
+}
+
 .main-nav.sticky {
   position: fixed;
   width: 100%;
