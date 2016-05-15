@@ -29,7 +29,24 @@
 		<link rel="apple-touch-icon" href="upload/apple-touch-icon.png">
 	    <link rel="apple-touch-icon" sizes="72x72" href="upload/apple-touch-icon-72x72.png">
 	    <link rel="apple-touch-icon" sizes="114x114" href="upload/apple-touch-icon-114x114.png">
-	    
+
+		<!-- jQuery Scripts -->
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<script type="text/javascript" src="js/canvas-vas.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/lightbox.min.js"></script>
+		<script type="text/javascript" src="js/owl.carousel.min.js"></script>
+		<script type="text/javascript" src="js/jquery.appear.js"></script>
+		<script type="text/javascript" src="js/SmoothScroll.js"></script>
+		<script type="text/javascript" src="js/jquery.localScroll.min.js"></script>
+		<script type="text/javascript" src="js/jquery.scrollTo.min.js"></script>
+		<script type="text/javascript" src="js/jquery.simple-text-rotator.min.js"></script>
+		<script type="text/javascript" src="js/jquery.easing.min.js"></script>
+		<script type="text/javascript" src="js/wow.min.js"></script>
+		<!--script type="text/javascript" src="https://maps.google.com/maps/api/js?sensor=false"></script-->
+		<script type="text/javascript" src="js/jquery.gmap.js"></script>
+		<script type="text/javascript" src="js/scripts.js"></script>
+
 	    <!-- Gaode Map -->
 	    <link rel="stylesheet" href="http://cache.amap.com/lbs/static/main1119.css"/>
         <script src="http://cache.amap.com/lbs/static/es5.min.js"></script>
@@ -67,12 +84,12 @@
 
 				<nav class="nav-hide">
 					<ul class="nav local-scroll">
-					    <li class="active"><a href="#home">TOP</a></li>
-					    <li><a href="#intro">会议介绍</a></li>
-					    <li><a href="#speakers">讲师介绍</a></li>
-						<li><a href="#register">注册参会</a></li>
+					    <li class="active"><a lang="en" href="#home">TOP</a></li>
+					    <li><a lang="en" href="#intro">INTRO</a></li>
+					    <li><a lang="en" href="#speakers">SPEAKERS</a></li>
+						<li><a lang="en" href="#register">REGISTER</a></li>
 						<!-- <li><a href="#agenda">AGENDA</a></li> -->
-					    <li><a href="#venue">会议地点</a></li>
+					    <li><a lang="en" href="#venue">VENUE</a></li>
 					</ul>
 				</nav>
 
@@ -110,7 +127,7 @@
 				<div class="container relative clearfix">
 				<h1 class="main-title">Learning Doing Being<br/>
 					<span>Scrum Gathering China 2016</span><br/>
-					<span>中国 杭州</span><br/>
+					<span lang="en">Hangzhou China</span><br/>
 				</h1>
 				
 				</div> <!-- end container -->
@@ -124,15 +141,20 @@
 
 						<div class="col-sm-8 col-sm-offset-2 text-center wow slideInUp" data-wow-duration="1.2s" data-wow-delay="0s">
 							<h2 class="intro-heading">
-							<strong>什么是SCRUM GATHERING?</strong>
+							<strong><span lang="en">What are Scrum Gatherings</span></strong>
 							</h2>
 							<p class="intro-text">
-							<span>
-								Scrum Gathering为敏捷实践者提供一次聚会的机会，分享关于Scrum和敏捷的热情以及知识。在持续2天的盛会中，你将遇见志趣相投的Scrum实践者、讲师、教练和拥趸，你也将听到惊艳的主题演讲，参与开放空间活动，加深你对Scrum的理解。</span>
-								<br/><br/><span>
-								Scrum Gathering China 2016，将于2016月10月21日和22日于中国杭州西子湖畔举行。
-								</span>
-								<br/><br/><span>加拿大英属哥伦比亚大学发展认知神经科学教授Adele Diamond将学习分为Learning、Doing 和Being三个阶段；中国近现代享有国际声誉的杰出学者王国维在《人间词话》里谈到治学经验：“古今之成大事业、大学问者，必经过三种之境界。‘昨夜西风凋碧树，独上高楼，望尽天涯路’，此第一境也；‘衣带渐宽终不悔，为伊消得人憔悴’，此第二境也；‘众里寻他千百度，暮然回首，那人正在灯火阑珊处’，此第三境也。”。我们认为敏捷的学习与实践如学习及治学历程类同。因此，本届Scrum Gathering大会希望通过“Learning-Doing-Being”这一主题，让我们一起体验这些不同阶段中的精彩和奥秒之处！</span>
+							<span lang="en" data-lang-token="sg_desc_1">
+								At Scrum Gathering, you'll meet like-minded Scrum practitioners, trainers, coaches, and enthusiasts. You'll also hear amazing keynote speakers, participate in open space sessions, and deepen your Scrum knowledge.
+							</span>
+							<br/><br/>
+							<span lang="en" data-lang-token="sg_desc_2">
+								Scrum Gathering China 2016 will be held at Hangzhou city during October 21-22, 2016.
+							</span>
+							<br/><br/>
+							<span lang="en" data-lang-token="sg_desc_3">
+								ADELE DIAMOND, the professor of developmental cognitive neuroscience at the University of British Columbia, grabs the headlines and brings to the forefront innovative ways of developing effective learning environments and strategies, looks at the world of play and being in learning in terms of cognitive science, and brings up "Learning, Doing, Being". In China, a famous scholar, writer and poem, Wang Guowei also brings the similar opinion of the 3 stages in learning. We hope we could approach different topics via the different learning stages to have a success Gathering!
+							</span>
 							</p>
 						</div> <!-- end col -->
 
@@ -147,9 +169,10 @@
 				<!-- Call to Action -->
 			<section class="call-to-action" id="register">
 				<div class="container">			
-					<h2 class="text-center color-white">精彩盛会，期待您的加入</h2>
+					<h2 class="text-center color-white" lang="en">Are you ready to join?</h2>
 					<div class="text-center mt-40">
-						<!-- <a href="#" class="btn btn-large btn-light-solid">成为讲师</a>  --><a href="register.html" class="btn btn-large btn-light-solid">我要参会（早鸟价2016元人民币）</a>
+						<!-- <a href="#" class="btn btn-large btn-light-solid">成为讲师</a>  -->
+						<a href="register.html" class="btn btn-large btn-light-solid" lang="en">I Wanna Attend!</a>
 					</div>
 				</div> <!-- end container -->
 			</section> <!-- end call to action -->
@@ -157,8 +180,8 @@
 			<!-- Testimonials -->
 			<section class="section-wrap testimonials-slider" id="speakers">
 				<div class="container">
-					<h2 class="color-white text-center">部分讲师介绍</h2>
-					<p class="subheading color-white text-center">我们非常荣幸邀请到他们</p>
+					<h2 class="color-white text-center">OUR GREATE SPEAKERS</h2>
+					<p class="subheading color-white text-center">We Are Proud To Have Them With Us</p>
 
 					<div class="row">
 						<div id="owl-testimonials" class="owl-carousel owl-theme mt-40">
@@ -178,9 +201,9 @@
 								<div class="testimonials-box">
 									<img src="upload/testimonial_2.jpg" class="testimonials-img" alt="">
 									<div class="testimonial-details">
-										<p>More speaker introductions are coming soon, warmly welcome you to send your topic to conference organizer committee.</p>
-										<h5 class="testimonial-name">Name</h5>
-										<span> Title</span>
+										<p lang="en" data-lang-token="speaker_placeholder">More speaker introductions are coming soon, warmly welcome you to send your topic to conference organizer committee.</p>
+										<h5 class="testimonial-name" lang="en">Your Name</h5>
+										<span lang="en"> Your Title</span>
 									</div>
 								</div>
 							</div> <!-- end first testimonial -->
@@ -203,47 +226,21 @@
 			<section class="section-wrap bg-light partners-light">
 				<div class="container">
 					<div class="row">
-						<h2 class="text-center">会议赞助商</h2>
-						<p align="center"><a href="mailto:sgorganizer@outlook.com?subject=Sponsor Scrum Gathering China 2016">点击此处联系我们，成为会议赞助商，虚位以待</a></p>
+						<h2 class="text-center" lang="en">SPONSORS</h2>
+						<p align="center"><a lang="en" href="mailto:sgorganizer@outlook.com?subject=Sponsor Scrum Gathering China 2016">Click here to sponsor the Gathering!</a></p>
 						<div id="owl-partners" class="owl-carousel owl-theme">
 
 							<div class="item">
-								<a href="#">
+								<a href="https://www.scrumalliance.org">
 									<img src="upload/scrum-alliance.png" alt="">
 								</a>
 							</div> 
 
-							
-							<div class="item">
-								<a href="#">
-									<img src="upload/scrum-alliance.png" alt="">
-								</a>
-							</div> 
-
-							<div class="item">
-								<a href="#">
-									<img src="upload/scrum-alliance.png" alt="">
-								</a>
-							</div> 
-
-
-							<div class="item">
-								<a href="#">
-									<img src="upload/scrum-alliance.png" alt="">
-								</a>
-							</div> 
-
-							<div class="item">
-								<a href="#">
-									<img src="upload/scrum-alliance.png" alt="">
-								</a>
-							</div> 
-
-							<div class="item">
-								<a href="#">
-									<img src="upload/scrum-alliance.png" alt="">
-								</a>
-							</div>  <!-- end second logo -->
+							<!--<div class="item">-->
+								<!--<a href="#">-->
+									<!--<img src="upload/scrum-alliance.png" alt="">-->
+								<!--</a>-->
+							<!--</div>  &lt;!&ndash; end second logo &ndash;&gt;-->
 
 						</div> <!-- end carousel -->
 						
@@ -326,8 +323,8 @@
 		
 			<section class="section-wrap pb-0 our-team bg-light" id="venue">
 				<div class="container">
-				<h2 class="text-center">会议地点</h2>
-					<p class="subheading text-center">浙江省 杭州市 花港海航渡假酒店</p>
+				<h2 class="text-center" lang="en">Conference Location</h2>
+					<p class="subheading text-center" lang="en">Huagang HNA Resort, Hangzhou, Zhejiang</p>
 				</div>
 			</section>
 				
@@ -448,22 +445,7 @@
 
 		</div> <!-- end main-wrapper -->
 		
-		<!-- jQuery Scripts -->
-		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-		<script type="text/javascript" src="js/canvas-vas.js"></script>
-		<script type="text/javascript" src="js/bootstrap.min.js"></script>
-		<script type="text/javascript" src="js/lightbox.min.js"></script>
-		<script type="text/javascript" src="js/owl.carousel.min.js"></script>
-		<script type="text/javascript" src="js/jquery.appear.js"></script>
-		<script type="text/javascript" src="js/SmoothScroll.js"></script>
-		<script type="text/javascript" src="js/jquery.localScroll.min.js"></script>
-		<script type="text/javascript" src="js/jquery.scrollTo.min.js"></script>
-		<script type="text/javascript" src="js/jquery.simple-text-rotator.min.js"></script>
-		<script type="text/javascript" src="js/jquery.easing.min.js"></script>
-		<script type="text/javascript" src="js/wow.min.js"></script>
-		<!--script type="text/javascript" src="https://maps.google.com/maps/api/js?sensor=false"></script-->
-		<script type="text/javascript" src="js/jquery.gmap.js"></script>
-	    <script type="text/javascript" src="js/scripts.js"></script>
+
 
 
 		<!-- Google Map -->

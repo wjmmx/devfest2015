@@ -1,7 +1,27 @@
 {
   "token": {
+    "TOP":"回到页首",
+    "INTRO":"会议介绍",
+    "SPEAKERS":"讲师介绍",
+    "REGISTER":"注册参会",
+    "AGENDA":"会议议程",
+    "VENUE":"会议地点",
     "Hangzhou China":"中国杭州",
     "What are Scrum Gatherings":"什么是SCRUM GATHERINGS",
-    "sg_desc_1":"Scrum Gathering为敏捷实践者提供了一个聚会的机会，来分享关于Scrum和敏捷的热情、以及知识。在这个持续2天的盛会中，你将遇见志趣相投的Scrum实践者、讲师、教练和拥趸，你也将听到惊艳的主题演讲，参与开放空间活动，并加深你关于Scrum的了解。"
+    "sg_desc_1":"Scrum Gathering为敏捷实践者提供一次聚会的机会，分享关于Scrum和敏捷的实践以及知识；体验scrum 和敏捷的热情。在为期2天的盛会中，你将遇见志趣相投的Scrum实践者、讲师、教练和拥趸，你也将听到惊艳的主题演讲，参与开放空间活动，加深你对Scrum的理解。",
+    "sg_desc_2":"Scrum Gathering China 2016，将于2016月10月21日和22日于中国杭州西子湖畔举行。",
+    "sg_desc_3":"加拿大英属哥伦比亚大学发展认知神经科学教授Adele Diamond将学习分为Learning、Doing 和Being三个阶段；中国近现代享有国际声誉的杰出学者王国维在《人间词话》里谈到治学经验：“古今之成大事业、大学问者，必经过三种之境界。‘昨夜西风凋碧树，独上高楼，望尽天涯路’，此第一境也；‘衣带渐宽终不悔，为伊消得人憔悴’，此第二境也；‘众里寻他千百度，暮然回首，那人正在灯火阑珊处’，此第三境也。”。敏捷的学习与实践如学习及治学历程类同。因此，本届Scrum Gathering大会希望通过“Learning-Doing-Being”这一主题，让我们一起探索这些不同阶段中的精彩和奥秒之处！",
+    "Are you ready to join?":"精彩盛会，期待您的加入",
+    "I Wanna Attend!":"我要参会（早鸟价2016元人民币）",
+    "OUR GREATE SPEAKERS":"演讲嘉宾介绍",
+    "We Are Proud To Have Them With Us":"我们非常荣幸邀请到他们",
+    "speaker_placeholder":"更多的演讲嘉宾信息在持续更新中。我们诚挚地邀请您发送您的话题到大会组委会。",
+    "Your Name":"您的姓名",
+    "Your Title":"您的职位",
+    "SPONSORS":"大会赞助商",
+    "Click here to sponsor the Gathering!":"点击此处联系我们，成为会议赞助商，虚位以待",
+    "Conference Location":"会议地点",
+    "Huagang HNA Resort, Hangzhou, Zhejiang":"浙江省 杭州市 花港海航渡假酒店"
+
   }
 }
