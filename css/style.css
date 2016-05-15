@@ -6,9 +6,9 @@ canvas#spiders {
 h1.main-title {
   position: relative;
   margin-top: -350px;
-  font-size: 5vw !important;
+  font-size: 4vw !important;
   color: #fff;
-  font-weight: 600;
+  font-weight: 400;
 }
 h1.main-title span {font-size: 3vw;}
 .clearfix { *zoom: 1; }
@@ -20,6 +20,12 @@ h1.main-title span {font-size: 3vw;}
 .relative { position: relative; }
 .section-wrap { padding: 30px 0; }
 .color-white { color: #fff !important; }
+.color-white .highlight-price {
+    color: #f00 !important;
+    font-size: 4vw !important;
+    font-weight: 400;
+}
+
 .left { float: left; }
 .right { float: right; }
 .bg-light { background-color: #fafafa; }
