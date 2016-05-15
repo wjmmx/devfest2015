@@ -207,6 +207,8 @@ p {
     background-image: none;
     border: 1px solid transparent;
     border-radius: 4px;
+
+    color: #fff;
 }
 
 .lang-toggle a:link, .lang-toggle a:visited, .lang-toggle a:hover, .lang-toggle a:active{
