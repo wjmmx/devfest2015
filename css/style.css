@@ -764,6 +764,9 @@ nav ul li.active > a {
 
 .testimonials-box img {
   float: left;
+  /*change the cursor to pointer*/
+  /*by Philip*/
+  cursor: pointer;
 }
 
 .testimonial-details {
@@ -776,11 +779,16 @@ nav ul li.active > a {
   font-size: 14px;
   color: #3f51b5;
   margin-bottom: 10px;
+  /*change the cursor to pointer*/
+  /*by Philip*/
+  cursor: pointer;
 }
 
+/*Comment out by Philip*/
+/*
 .testimonial-details span:before {
   content: '/'
-}
+}*/
 
 .testimonial-details span {
   font-size: 14px;
