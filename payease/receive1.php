@@ -10,7 +10,7 @@ $v_moneytype = $_REQUEST['v_moneytype'];          //±“÷÷
 $v_md5info = $_REQUEST['v_md5info'];
 $v_md5money = $_REQUEST['v_md5money'];
 $v_sign = $_REQUEST['v_sign'];
-/*
+
 echo $v_oid."<br>";
 echo $v_pstatus."<br>";
 echo $v_pstring."<br>";
@@ -19,7 +19,7 @@ echo $v_amount."<br>";
 echo $v_moneytype."<br>";
 echo $v_md5info."<br>";
 echo $v_md5money."<br>";
-echo $v_sign."<br>";*/
+echo $v_sign."<br>";
 //MD5–£—È
 function hmac ($key, $data)
     {

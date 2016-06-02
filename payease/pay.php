@@ -69,7 +69,7 @@ window.onload=function(){
 	<tr>
         <td width="31%"><div align="right">客户电话:</div></td>
         <td width="69%"><input type="text" name="v_rcvtel" id="v_rcvtel"/></td>
-    </tr>    
+    </tr>
 	<tr>
         <td width="31%"><div align="right">客户邮编:</div></td>
         <td width="69%"><input type="text" name="v_rcvpost" id="v_rcvpost"/></td>
