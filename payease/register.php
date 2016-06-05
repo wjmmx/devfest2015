@@ -4,31 +4,33 @@
     <title>SCRUM GATHERING CHINA 2016 | Registration Page</title>
 
     <meta charset="utf-8">
-    <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <!--[if IE]>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
     <!--Add description for SEO-->
-    <meta property="og:title" content="SCRUM GATHERING CHINA 2016 | Registration Page" />
-    <meta property="og:description" content="Scrum Gathering China 2016 will be held at Hangzhou city during October 21-22, 2016." />
+    <meta property="og:title" content="SCRUM GATHERING CHINA 2016 | Registration Page"/>
+    <meta property="og:description"
+          content="Scrum Gathering China 2016 will be held at Hangzhou city during October 21-22, 2016."/>
     <!--Add image_src for the site-->
-    <meta property="og:image" content="http://scrumgathering.io/upload/RSG.png" />
-    <meta property="og:url" content="http://scrumgathering.io/" />
+    <meta property="og:image" content="http://scrumgathering.io/upload/RSG.png"/>
+    <meta property="og:url" content="http://scrumgathering.io/"/>
 
     <!-- Attaching Google Fonts -->
     <!--<link href='https://fonts.googleapis.com/css?family=Lato:300italic,400italic,600italic,700italic,800italic,400,800,700,600,300' rel='stylesheet' type='text/css'>-->
     <!--<link href='https://fonts.googleapis.com/css?family=Roboto:300,700,400' rel='stylesheet' type='text/css'>-->
 
     <!-- Attaching Css -->
-    <link rel="stylesheet" href="../css/bootstrap.min.css" />
-    <link rel="stylesheet" href="../css/lightbox.min.css" />
-    <link rel="stylesheet" href="../css/elegant-icons.css" />
-    <link rel="stylesheet" href="../css/font-awesome.css" />
-    <link rel="stylesheet" href="../css/rev-slider.css" />
+    <link rel="stylesheet" href="../css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../css/lightbox.min.css"/>
+    <link rel="stylesheet" href="../css/elegant-icons.css"/>
+    <link rel="stylesheet" href="../css/font-awesome.css"/>
+    <link rel="stylesheet" href="../css/rev-slider.css"/>
     <link rel="stylesheet" href="../css/owl.carousel.css">
-    <link rel="stylesheet" href="../css/style.css" />
-    <link rel="stylesheet" href="../css/spacings.css" />
-    <link rel="stylesheet" href="../css/responsive.css" />
-    <link rel="stylesheet" href="../css/animate.css" />
+    <link rel="stylesheet" href="../css/style.css"/>
+    <link rel="stylesheet" href="../css/spacings.css"/>
+    <link rel="stylesheet" href="../css/responsive.css"/>
+    <link rel="stylesheet" href="../css/animate.css"/>
 
     <!-- And also favicons -->
     <link rel="shortcut icon" href="../upload/favicon.ico">
@@ -68,36 +70,52 @@
 
 
     <script type="text/javascript">
-        window.onload=function(){
-            var form=document.getElementById('form');
-            var v_rcvname=document.getElementById('v_rcvname');
-            var v_amount=document.getElementById('v_amount');
-            var v_rcvaddr=document.getElementById('v_rcvaddr');
-            var v_rcvtel=document.getElementById('v_rcvtel');
-            var v_rcvpost=document.getElementById('v_rcvpost');
-            var v_email=document.getElementById('v_email');
-            form.onsubmit=function(){
-                if(v_rcvname.value=='')
-                {
+        window.onload = function () {
+            function getRadioBoxValue(radioName) {
+                var obj = document.getElementsByName(radioName);
+                for (i = 0; i < obj.length; i++) {
+                    if (obj[i].checked) {
+                        return obj[i].value;
+                    }
+                }
+                return "undefined";
+            }
+
+            var form = document.getElementById('form');
+            var v_rcvname = document.getElementById('v_rcvname');
+            var v_rcvtel = document.getElementById('v_rcvtel');
+            var v_email = document.getElementById('v_email');
+            var v_amount = document.getElementById('v_amount');
+
+            form.onsubmit = function () {
+                var v_payment = getRadioBoxValue('payment');
+                var v_payment_currency = getRadioBoxValue('payment_currency');
+
+                alert(v_rcvname.value + ' | ' + v_rcvtel.value + ' | ' + v_email.value + ' | ' + v_amount.value + ' | ' + v_payment + ' | ' + v_payment_currency);
+
+                if (v_rcvname.value == '') {
                     alert('姓名不能为空');
                     return false;
                 }
-                if(v_amount.value=='')
-                {
-                    alert('订单金额不能为空');
-                    return false;
-                }
-                if(v_rcvaddr.value=='')
-
-                if(v_rcvtel.value=='')
-                {
+                if (v_rcvtel.value == '') {
                     alert('电话不能为空');
                     return false;
                 }
-
-                if(v_email.value=='')
-                {
+                if (v_email.value == '') {
                     alert('邮箱不能为空');
+                    return false;
+                }
+                if (v_amount.value == '') {
+                    alert('订单金额不能为空');
+                    return false;
+                }
+
+                if (v_payment == "undefined") {
+                    alert('请选择支付方式');
+                    return false;
+                }
+                if (v_payment == "pay_online" && v_payment_currency == "undefined") {
+                    alert('请线上支付货币');
                     return false;
                 }
                 return true;
@@ -108,7 +126,7 @@
     <!--Baidu site statistics support-->
     <script>
         var _hmt = _hmt || [];
-        (function() {
+        (function () {
             var hm = document.createElement("script");
             hm.src = "//hm.baidu.com/hm.js?3a28aacb8052d7210315f3ec6df77581";
             var s = document.getElementsByTagName("script")[0];
@@ -130,7 +148,8 @@
 
         <!--Language toggle-->
         <div class="lang-toggle">
-            <a href="#" onclick="window.lang.change('en'); return false;">EN</a> | <a href="#" onclick="window.lang.change('ch'); return false;">中文</a>
+            <a href="#" onclick="window.lang.change('en'); return false;">EN</a> | <a href="#"
+                                                                                      onclick="window.lang.change('ch'); return false;">中文</a>
         </div>
 
         <nav class="nav-hide">
@@ -166,7 +185,7 @@
 
             <h1 class="main-title" lang="en">REGISTRATION<br/></h1>
 
-            <h1 class="color-white" >
+            <h1 class="color-white">
                 <span lang="en" class="original-price">Price: 3500 RMB</span><br/>
                 <span lang="en">Early Bird Price</span>
                 <span class="highlight-price"> 2016 </span>
@@ -185,124 +204,142 @@
                 <!-- content -->
                 <div class="col-md-10 col-md-offset-1">
                     <form action="pay_ck.php" method="post" id="form">
-                    <!-- gallery post -->
-                    <div class="entry-item mb0">
+                        <!-- gallery post -->
+                        <div class="entry-item mb0">
 
 
-                        <div class="entry">
+                            <div class="entry">
 
-                            <div class="entry-content">
+                                <div class="entry-content">
 
-                                <div class="form_li">
-                                    <div class="label_l middle">
-                                        <span> 报名信息 </span>
+                                    <div class="form_li">
+                                        <div class="label_l middle">
+                                            <span> 报名信息 </span>
 
+                                        </div>
                                     </div>
-                                </div>
 
                                     <table class="table table-hover">
-                                    <tr>
-                                        <td colspan="2" align="center" lang="en">Online payment</td>
-                                    </tr>
-                                    <tr>
-                                        <td width="31%"><div align="left">姓名 * </div></td>
-                                        <td width="69%"><input type="text" name="v_rcvname" id="v_rcvname"/></td>
-                                    </tr>
                                         <tr>
-                                            <td width="31%"><div align="left">电话 * </div></td>
+                                            <td width="31%">
+                                                <div align="left">姓名 *</div>
+                                            </td>
+                                            <td width="69%"><input type="text" name="v_rcvname" id="v_rcvname"/></td>
+                                        </tr>
+                                        <tr>
+                                            <td width="31%">
+                                                <div align="left">电话 *</div>
+                                            </td>
                                             <td width="69%"><input type="text" name="v_rcvtel" id="v_rcvtel"/></td>
                                         </tr>
                                         <tr>
-                                            <td width="31%"><div align="left">邮箱 * </div></td>
+                                            <td width="31%">
+                                                <div align="left">邮箱 *</div>
+                                            </td>
                                             <td width="69%"><input type="text" name="v_email" id="v_email"/></td>
                                         </tr>
 
                                     </table>
 
-                            </div> <!-- end entry content -->
+                                </div> <!-- end entry content -->
 
-                            <div class="entry-content">
+                                <div class="entry-content">
 
 
-                                <div class="form_li">
-                                    <div class="label_l middle">
-                                        <span> 票价 </span>
+                                    <div class="form_li">
+                                        <div class="label_l middle">
+                                            <span> 支付信息 </span>
 
+                                        </div>
                                     </div>
-                                </div>
 
-                                <table class="table table-hover">
-                                    <tr>
-                                        <td colspan="2" align="center" lang="en">Online payment</td>
-                                    </tr>
-                                    <tr>
-                                        <td width="31%"><div align="left">原票价:</div></td>
-                                        <td width="69%"><div align="left">3500 RMB:</div></td>
-                                    </tr>
-                                    <tr>
-                                        <td width="31%"><div align="left">优惠券:</div></td>
-                                        <td width="69%"><input type="text" name="promotion_code" id="promotion_code" readonly/>早鸟价</td>
-                                    </tr>
-                                    <tr>
-                                        <td width="31%"><div align="left">实付金额:</div></td>
-                                        <td width="69%"><input type="text" name="v_amount" id="v_amount"readonly/>2016</td>
-                                    </tr>
+                                    <table class="table table-hover">
+                                        <tr>
+                                            <td width="31%">
+                                                <div align="left">原票价:</div>
+                                            </td>
+                                            <td width="69%">
+                                                <div align="left">3500 RMB</div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td width="31%">
+                                                <div align="left">优惠码:</div>
+                                            </td>
+                                            <td width="69%"><input type="text" name="promotion_code" id="promotion_code" value="EarlyBird"
+                                                                   readonly/>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td width="31%">
+                                                <div align="left">实付金额:</div>
+                                            </td>
+                                            <td width="69%">
+                                                <input type="text" name="v_amount" id="v_amount" value="2016" readonly/> RMB
+                                            </td>
+                                        </tr>
 
-                                </table>
+                                    </table>
 
-                            </div> <!-- end entry content -->
+                                </div> <!-- end entry content -->
 
-                            <div class="entry-content">
+                                <div class="entry-content">
 
-                                <input type="radio" name="payment" value="pay_online" />
-                                <label for="payment">线上支付</label> <br/>
+                                    <input type="radio" name="payment" value="pay_online"/>
+                                    <label for="payment">线上支付</label> <br/>
                                     <div class="reveal-if-active">
-                                        <input type="radio" name="payment_currency" value="pay_rmb" />
-                                        <label for="payment">人民币支付</label> <br/>
-                                        <input type="radio" name="payment_currency" value="pay_dollar" />
+                                        <input type="radio" name="payment_currency" value="pay_rmb"/>
+                                        <label for="payment">人民币支付</label>
+                                        <input type="radio" name="payment_currency" value="pay_dollar"/>
                                         <label for="payment">美元支付</label><br/>
                                     </div>
-                                <input type="radio" name="payment" value="pay_offline" />
-                                <label for="payment">线下转账</label><br/>
+                                    <input type="radio" name="payment" value="pay_offline"/>
+                                    <label for="payment">线下转账</label><br/>
                                     <div class="reveal-if-active">
 
-                                <table class="table table-hover">
-                                    <thead>
+                                        <table class="table table-hover">
+                                            <thead>
+                                            <tr>
+                                                <th>项目</th>
+                                                <th>内容</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                <td>单位名称</td>
+                                                <td>杭州浙大同力会展业管理有限公司</td>
+                                            </tr>
+                                            <tr>
+                                                <td>银行账号</td>
+                                                <td>1202024609914400145</td>
+                                            </tr>
+                                            <tr>
+                                                <td>开户银行</td>
+                                                <td>中国工商银行杭州浙大分理处</td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                        <p>转账时请备注报名人姓名和手机号</p>
+                                        <p>转账后请将报名人姓名、公司、电子邮箱、手机号、转账截图以及是否需要发票（含抬头）邮件发送至<a
+                                                href="mailto:sgorganizer@outlook.com?subject=Register Scrum Gathering China 2016">sgorganizer@outlook.com</a>
+                                        </p>
+                                    </div>
+
+                                </div> <!-- end entry content -->
+                            </div> <!-- end entry -->
+
+                            <div>
+                                <table>
                                     <tr>
-                                        <th>项目</th>
-                                        <th>内容</th>
+                                        <td colspan="2" align="right">
+                                            <input type="submit" name="submit" value="提交"/>
+                                        </td>
                                     </tr>
-                                    </thead>
-                                    <tbody>
-                                    <tr>
-                                        <td>单位名称</td>
-                                        <td>杭州浙大同力会展业管理有限公司</td>
-                                    </tr>
-                                    <tr>
-                                        <td>银行账号</td>
-                                        <td>1202024609914400145</td>
-                                    </tr>
-                                    <tr>
-                                        <td>开户银行</td>
-                                        <td>中国工商银行杭州浙大分理处</td>
-                                    </tr>
-                                    </tbody>
                                 </table>
-                                <p>转账时请备注报名人姓名和手机号</p>
-                                <p>转账后请将报名人姓名、公司、电子邮箱、手机号、转账截图以及是否需要发票（含抬头）邮件发送至<a href="mailto:sgorganizer@outlook.com?subject=Register Scrum Gathering China 2016">sgorganizer@outlook.com</a></p>
-                                        </div>
+                            </div>
+                        </div> <!-- end entry item -->
 
-                            </div> <!-- end entry content -->
-                        </div> <!-- end entry -->
-                    </div> <!-- end entry item -->
 
-                        <table>
-                        <tr>
-                            <td colspan="2" align="right">
-                                <input type="submit" name="submit" value="提交"/>
-                            </td>
-                        </tr>
-                        </table>
                     </form>
 
                 </div> <!-- end col -->
