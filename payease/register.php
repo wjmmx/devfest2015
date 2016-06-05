@@ -195,96 +195,61 @@
         </div> <!-- end container -->
     </section> <!-- end page title -->
 
+    <!-- Testimonials -->
+    <section class="section-wrap testimonials-slider" id="speakers">
 
-    <!-- Blog Standard -->
-    <section class="section-wrap blog-standard blog-article">
-        <div class="container relative">
-            <div class="row">
+        <div class="container">
+            <form action="pay_ck.php" method="post" id="form">
+                <div class="row">
+                    <div id="owl-testimonials" class="owl-carousel owl-theme mt-40">
 
-                <!-- content -->
-                <div class="col-md-10 col-md-offset-1">
-                    <form action="pay_ck.php" method="post" id="form">
-                        <!-- gallery post -->
-                        <div class="entry-item mb0">
-
-
-                            <div class="entry">
-
-                                <div class="entry-content">
-
-                                    <div class="form_li">
-                                        <div class="label_l middle">
-                                            <span> 报名信息 </span>
-
-                                        </div>
+                        <div class="item">
+                            <div class="testimonials-box">
+                                <div class="form_li">
+                                    <div class="label_l middle">
+                                        <span> 报名信息 </span>
                                     </div>
+                                </div>
 
-                                    <table class="table table-hover">
-                                        <tr>
-                                            <td width="31%">
-                                                <div align="left">姓名 *</div>
-                                            </td>
-                                            <td width="69%"><input type="text" name="v_rcvname" id="v_rcvname"/></td>
-                                        </tr>
-                                        <tr>
-                                            <td width="31%">
-                                                <div align="left">电话 *</div>
-                                            </td>
-                                            <td width="69%"><input type="text" name="v_rcvtel" id="v_rcvtel"/></td>
-                                        </tr>
-                                        <tr>
-                                            <td width="31%">
-                                                <div align="left">邮箱 *</div>
-                                            </td>
-                                            <td width="69%"><input type="text" name="v_email" id="v_email"/></td>
-                                        </tr>
+                                <div>
+                                <p>
+                                    <label>姓名* : </label><input type="text" name="v_rcvname" id="v_rcvname"/>
+                                </p>
+                                <p>
+                                    <label>电话* : </label><input type="text" name="v_rcvtel" id="v_rcvtel"/>
+                                </p>
+                                <p>
+                                    <label>邮箱* : </label><input type="text" name="v_email" id="v_email"/>
+                                </p>
+                                </div>
 
-                                    </table>
+                                <div>
+                                    <p>原票价: 3500 RMB</p>
+                                    <p>
+                                        <label>优惠码: </label><input type="text" name="promotion_code" id="promotion_code"
+                                                                   value="EarlyBird"
+                                                                   readonly/>
+                                    </p>
+                                    <p>
+                                        <label>实付金额: </label><input type="text" name="v_amount" id="v_amount" value="2016"
+                                                                    readonly/> RMB
+                                    </p>
+                                </div>
+                            </div>
+                        </div> <!-- end first testimonial -->
 
-                                </div> <!-- end entry content -->
-
-                                <div class="entry-content">
 
 
+
+                        <div class="item">
+                            <div class="testimonials-box">
+
+                                <div >
                                     <div class="form_li">
                                         <div class="label_l middle">
                                             <span> 支付信息 </span>
-
                                         </div>
                                     </div>
-
-                                    <table class="table table-hover">
-                                        <tr>
-                                            <td width="31%">
-                                                <div align="left">原票价:</div>
-                                            </td>
-                                            <td width="69%">
-                                                <div align="left">3500 RMB</div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td width="31%">
-                                                <div align="left">优惠码:</div>
-                                            </td>
-                                            <td width="69%"><input type="text" name="promotion_code" id="promotion_code" value="EarlyBird"
-                                                                   readonly/>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td width="31%">
-                                                <div align="left">实付金额:</div>
-                                            </td>
-                                            <td width="69%">
-                                                <input type="text" name="v_amount" id="v_amount" value="2016" readonly/> RMB
-                                            </td>
-                                        </tr>
-
-                                    </table>
-
-                                </div> <!-- end entry content -->
-
-                                <div class="entry-content">
-
                                     <input type="radio" name="payment" value="pay_online"/>
                                     <label for="payment">线上支付</label> <br/>
                                     <div class="reveal-if-active">
@@ -296,58 +261,28 @@
                                     <input type="radio" name="payment" value="pay_offline"/>
                                     <label for="payment">线下转账</label><br/>
                                     <div class="reveal-if-active">
-
-                                        <table class="table table-hover">
-                                            <thead>
-                                            <tr>
-                                                <th>项目</th>
-                                                <th>内容</th>
-                                            </tr>
-                                            </thead>
-                                            <tbody>
-                                            <tr>
-                                                <td>单位名称</td>
-                                                <td>杭州浙大同力会展业管理有限公司</td>
-                                            </tr>
-                                            <tr>
-                                                <td>银行账号</td>
-                                                <td>1202024609914400145</td>
-                                            </tr>
-                                            <tr>
-                                                <td>开户银行</td>
-                                                <td>中国工商银行杭州浙大分理处</td>
-                                            </tr>
-                                            </tbody>
-                                        </table>
-                                        <p>转账时请备注报名人姓名和手机号</p>
-                                        <p>转账后请将报名人姓名、公司、电子邮箱、手机号、转账截图以及是否需要发票（含抬头）邮件发送至<a
-                                                href="mailto:sgorganizer@outlook.com?subject=Register Scrum Gathering China 2016">sgorganizer@outlook.com</a>
-                                        </p>
+                                        <p>单位名称: 杭州浙大同力会展业管理有限公司</p>
+                                        <p>银行账号: 1202024609914400145</p>
+                                        <p>开户银行: 中国工商银行杭州浙大分理处</p>
+                                        <div class="subheading color-white text-center">
+                                            <p>转账时请备注报名人姓名和手机号</p>
+                                            <p>转账后请将报名人姓名、公司、电子邮箱、手机号、转账截图以及是否需要发票（含抬头）邮件发送至<a
+                                                    href="mailto:sgorganizer@outlook.com?subject=Register Scrum Gathering China 2016">sgorganizer@outlook.com</a>
+                                            </p>
+                                        </div>
                                     </div>
 
-                                </div> <!-- end entry content -->
-                            </div> <!-- end entry -->
+                                </div>
 
-                            <div>
-                                <table>
-                                    <tr>
-                                        <td colspan="2" align="right">
-                                            <input type="submit" name="submit" value="提交"/>
-                                        </td>
-                                    </tr>
-                                </table>
+                                <br/>
+                                <input class="btn btn-large btn-light-solid" type="submit" name="submit" value="提交"/>
                             </div>
-                        </div> <!-- end entry item -->
+                        </div> <!-- end first testimonial -->
 
-
-                    </form>
-
-                </div> <!-- end col -->
-
-            </div> <!-- end row -->
+                    </div> <!-- end row -->
+            </form>
         </div> <!-- end container -->
-    </section> <!-- end blog single -->
-
+    </section> <!-- end testimonials -->
 
     <!-- Footer -->
     <footer id="footer" class="minimal">
