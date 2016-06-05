@@ -184,7 +184,7 @@
 
                 <!-- content -->
                 <div class="col-md-10 col-md-offset-1">
-
+                    <form action="pay_ck.php" method="post" id="form">
                     <!-- gallery post -->
                     <div class="entry-item mb0">
 
@@ -192,62 +192,79 @@
                         <div class="entry">
 
                             <div class="entry-content">
-                                <form action="pay_ck.php" method="post" id="form">
 
-                                    <div class="form_li">
-                                        <div class="label_l middle">
-                                            <span> 客户姓名: </span>
-                                            <strong class="error_meg">*</strong>
-                                        </div>
-                                        <div class="con_l">
-                                            <div class="input_box">
-                                                <input type="text" id="v_rcvname" maxlength="50" name="v_rcvname" class="input"/>
-                                            </div>
-                                            <div class="error_meg" id="error_v_rcvname">
-                                            </div>
-                                        </div>
+                                <div class="form_li">
+                                    <div class="label_l middle">
+                                        <span> 报名信息 </span>
+
                                     </div>
+                                </div>
 
                                     <table class="table table-hover">
                                     <tr>
                                         <td colspan="2" align="center" lang="en">Online payment</td>
                                     </tr>
                                     <tr>
-                                        <td width="31%"><div align="left">姓名:</div></td>
+                                        <td width="31%"><div align="left">姓名 * </div></td>
                                         <td width="69%"><input type="text" name="v_rcvname" id="v_rcvname"/></td>
                                     </tr>
-                                    <tr>
-                                        <td width="31%"><div align="left">订单金额:</div></td>
-                                        <td width="69%"><input type="text" name="v_amount" id="v_amount"/></td>
-                                    </tr>
                                         <tr>
-                                            <td width="31%"><div align="left">电话:</div></td>
+                                            <td width="31%"><div align="left">电话 * </div></td>
                                             <td width="69%"><input type="text" name="v_rcvtel" id="v_rcvtel"/></td>
                                         </tr>
                                         <tr>
-                                            <td width="31%"><div align="left">邮箱:</div></td>
+                                            <td width="31%"><div align="left">邮箱 * </div></td>
                                             <td width="69%"><input type="text" name="v_email" id="v_email"/></td>
                                         </tr>
-                                    <tr>
-                                        <td width="31%"><div align="left">客户地址:</div></td>
-                                        <td width="69%"><input type="text" name="v_rcvaddr" id="v_rcvaddr"/></td>
-                                    </tr>
 
-                                    <tr>
-                                        <td width="31%"><div align="left">客户邮编:</div></td>
-                                        <td width="69%"><input type="text" name="v_rcvpost" id="v_rcvpost"/></td>
-                                    </tr>
-
-                                    <tr>
-                                        <td colspan="2" align="right">
-                                            <input type="submit" name="submit" value="提交"/>
-                                        </td>
-                                        </tr>
                                     </table>
-                                </form>
+
                             </div> <!-- end entry content -->
 
                             <div class="entry-content">
+
+
+                                <div class="form_li">
+                                    <div class="label_l middle">
+                                        <span> 票价 </span>
+
+                                    </div>
+                                </div>
+
+                                <table class="table table-hover">
+                                    <tr>
+                                        <td colspan="2" align="center" lang="en">Online payment</td>
+                                    </tr>
+                                    <tr>
+                                        <td width="31%"><div align="left">原票价:</div></td>
+                                        <td width="69%"><div align="left">3500 RMB:</div></td>
+                                    </tr>
+                                    <tr>
+                                        <td width="31%"><div align="left">优惠券:</div></td>
+                                        <td width="69%"><input type="text" name="promotion_code" id="promotion_code" readonly/>早鸟价</td>
+                                    </tr>
+                                    <tr>
+                                        <td width="31%"><div align="left">实付金额:</div></td>
+                                        <td width="69%"><input type="text" name="v_amount" id="v_amount"readonly/>2016</td>
+                                    </tr>
+
+                                </table>
+
+                            </div> <!-- end entry content -->
+
+                            <div class="entry-content">
+
+                                <input type="radio" name="payment" value="pay_online" />
+                                <label for="payment">线上支付</label> <br/>
+                                    <div class="reveal-if-active">
+                                        <input type="radio" name="payment_currency" value="pay_rmb" />
+                                        <label for="payment">人民币支付</label> <br/>
+                                        <input type="radio" name="payment_currency" value="pay_dollar" />
+                                        <label for="payment">美元支付</label><br/>
+                                    </div>
+                                <input type="radio" name="payment" value="pay_offline" />
+                                <label for="payment">线下转账</label><br/>
+                                    <div class="reveal-if-active">
 
                                 <table class="table table-hover">
                                     <thead>
@@ -273,10 +290,20 @@
                                 </table>
                                 <p>转账时请备注报名人姓名和手机号</p>
                                 <p>转账后请将报名人姓名、公司、电子邮箱、手机号、转账截图以及是否需要发票（含抬头）邮件发送至<a href="mailto:sgorganizer@outlook.com?subject=Register Scrum Gathering China 2016">sgorganizer@outlook.com</a></p>
+                                        </div>
 
                             </div> <!-- end entry content -->
                         </div> <!-- end entry -->
                     </div> <!-- end entry item -->
+
+                        <table>
+                        <tr>
+                            <td colspan="2" align="right">
+                                <input type="submit" name="submit" value="提交"/>
+                            </td>
+                        </tr>
+                        </table>
+                    </form>
 
                 </div> <!-- end col -->
 
