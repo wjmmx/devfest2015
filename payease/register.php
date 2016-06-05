@@ -289,11 +289,14 @@
                             </div>
                         </div> <!-- end of payment -->
 
-                        <div class="customNavigation text-center mt-50">
-                            <a class="btn prev"><i class="arrow_carrot-left"></i></a>
-                            <a class="btn next"><i class="arrow_carrot-right"></i></a>
-                        </div>
-                    </div> <!-- end row -->
+                    </div> <!-- end owl carousel-->
+
+                    <div class="customNavigation text-center mt-50">
+                        <a class="btn prev"><i class="arrow_carrot-left"></i></a>
+                        <a class="btn next"><i class="arrow_carrot-right"></i></a>
+                    </div>
+
+                </div> <!-- end row -->
             </form>
         </div> <!-- end container -->
     </section> <!-- end testimonials -->
