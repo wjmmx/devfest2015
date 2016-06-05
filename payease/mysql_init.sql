@@ -1,5 +1,5 @@
 DROP DATABASE IF EXISTS `payease`;
-CREATE DATABASE payease CHARACTER SET gb2312;
+CREATE DATABASE payease CHARACTER SET utf8;
 
 USE payease;
 DROP TABLE IF EXISTS `payeaseinfo`;
@@ -16,4 +16,4 @@ CREATE TABLE `payeaseinfo`(
   `v_rcvpost` varchar(10) DEFAULT NULL,
   `v_email` varchar(50) NOT NULL,
   `v_promotion` varchar(10) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=gb2312;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;

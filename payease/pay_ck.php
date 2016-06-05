@@ -1,37 +1,41 @@
 <?php
 /**
-	¥À“≥√Ê «œÚ ◊–≈“◊÷ß∏∂Ã·Ωª“≥√Ê°£Ω”ø⁄Œƒµµµƒµ⁄“ª≤ø∑÷°£±Ìµ•“ªπ≤13œÓ”––©≤Œ ˝ø…“‘”√≥£¡ø¥˙ÃÊ°£ ◊–≈≤ªÃ·»°œ˚∑—’ﬂµƒ√Ù∏––≈œ¢
+	submit to payease
 */
-    date_default_timezone_set("Asia/Shanghai");
+    include_once 'util/conn.php';
 
-    
+    $v_payment = $_POST['v_payment'];
+    $v_payment_currency = $_POST['v_payment_currency'];
+    $v_payment_interface = "https://pay.yizhifubj.com/prs/user_payment.checkit";
 
-    $v_ymd=date('Ymd'); //∂©µ•≤˙…˙»’∆⁄£¨“™«Û∂©µ•»’∆⁄∏Ò Ωyyyymmdd.
-	$v_mid="82370001";    //…Ãªß±‡∫≈£¨∫Õ ◊–≈«©‘º∫ÛªÒµ√,≤‚ ‘µƒ…Ãªß±‡∫≈444
+    if ($v_payment === "pay_online") {
+        if ($v_payment_currency === "pay_dollar") {
+            $v_payment_interface = "https://pay.yizhifubj.com/prs/e_user_payment.checkit";
+        }
+    }
+
+    $v_promotion_code = $_POST['v_promotion_code'];
+
+    $v_attendee_name = $_POST['v_rcvname'];
+
+    $v_ymd=date('Ymd'); //Order Date yyyymmdd.
+	$v_mid="82370001";    //Merchandise ID
 	$v_date=date('His');
-	$v_oid=$v_ymd .'-' . $v_mid . '-' .$v_date; //∂©µ•±‡∫≈°£∂©µ•±‡∫≈µƒ∏Ò Ω «yyyymmdd-…Ãªß±‡∫≈-¡˜ÀÆ∫≈£¨¡˜ÀÆ∫≈ø…“‘»°œµÕ≥µ±«∞ ±º‰£¨“≤ø…“‘»°ÀÊª˙ ˝£¨“≤ø…“‘…Ãªß◊‘º∫∂®“Âµƒ∂©µ•∫≈£¨◊‘º∫∂®“Âµƒ∂©µ•∫≈±ÿ–Î±£÷§√ø?¥ŒÃ·Ωª£¨∂©µ•∫≈ «Œ®“ªµƒ??
-	$v_rcvname=$v_mid; // ’ªı»À–’√˚,Ω®“È”√…Ãªß±‡∫≈¥˙ÃÊªÚ’ﬂ «”¢Œƒ ˝◊÷°£“ÚŒ™ ◊–≈∆ΩÃ®µƒ±‡∫≈ «gb2312µƒ
-	$v_rcvaddr=$v_mid; // ’ªı»Àµÿ÷∑£¨ π”√…Ãªß±‡∫≈¥˙ÃÊ
-	$v_rcvtel=$_POST['v_rcvtel'];   // ’ªı»ÀµÁª∞
-	$v_rcvpost=$_POST['v_rcvpost'];  // ’ªı»À” œ‰
-	$v_amount=$_POST['v_amount']; //∂©µ•Ω∂Ó
-	$v_orderstatus="1";//≈‰ªı◊¥Ã¨:0-Œ¥≈‰∆Î£¨1-“—≈‰
-	$v_ordername='RSGChina2016';  //∂©ªı»À–’√˚
-	$v_moneytype="0";  //0Œ™»À√Ò±“£¨1Œ™√¿‘™£¨2Œ™≈∑‘™£¨3Œ™”¢∞˜£¨4Œ™»’‘™£¨5Œ™∫´‘™£¨6Œ™∞ƒ¥Û¿˚—«‘™£¨7Œ™¬¨≤º(ƒ⁄ø®…Ãªß±“÷÷÷ªƒ‹Œ™»À√Ò±“)
-	$v_url="http://sg.dev/payease/receive1.php"; //÷ß∏∂ÕÍ≥…∫Ûµƒ µ ±∑µªÿµÿ÷∑°£÷ß∏∂ÕÍ≥…∫Û µ ±œ»œÚ’‚∏ˆµÿ÷∑◊ˆ∑µªÿ?‘⁄¥Àµÿ‡Ûœ¬◊ˆΩ” ’“¯––∑µªÿµƒ÷ß∏∂»∑»œœ˚œ¢?œÍœ∏µƒ∑µªÿ≤Œ ˝∏Ò ΩŒ˜(Ω”ø⁄Œƒµµµƒµ⁄∂˛≤ø∑÷ªÚ’ﬂ¥˙¬Î æ¿˝µƒreceived1.php)
-	//echo $v_oid."<br>";
-	//echo $v_amount."<br>";
-	//echo $v_rcvname."<br>";
-	//echo $v_rcvaddr."<br>";
-	//echo $v_rcvtel."<br>";
-	//echo $v_rcvpost."<br>";
-	
-	//v_md5infoµƒº∆À„
+	$v_oid=$v_ymd .'-' . $v_mid . '-' .$v_date; //OrderNO
+	$v_rcvname=$v_mid; //Use Merchandise ID
+	$v_rcvaddr=$v_mid; //Use Merchandise ID
+	$v_rcvtel=$_POST['v_rcvtel'];   //Telephone
+	$v_rcvpost="310000";  //postcode
+	$v_amount=$_POST['v_amount']; //Order Amount
+	$v_orderstatus="1";//Order status: 0-Not Ready 1-Ready
+	$v_ordername="RSGChina2016";  //people name who placed the order
+	$v_moneytype="0";  //0: RMB; 1: Dollar; 2: Europe;
+	$v_url=$domain_name . "/payease/receive1.php"; //the return URL
+
+	//v_md5info calculation
 	function hmac ($key, $data)
     {
-     // ¥¥Ω® md5µƒHMAC
-
-       $b = 64; // md5º”√‹◊÷Ω⁄≥§∂»
+       $b = 64;
        if (strlen($key) > $b) {
           $key = pack("H*",md5($key));
         }
@@ -44,18 +48,18 @@
         return md5($k_opad  . pack("H*",md5($k_ipad . $data)));
     }
 
-    $key = 'test';//…Ãªßµƒ√‹‘ø
-    $data = $v_moneytype.$v_ymd.$v_amount.$v_rcvname.$v_oid.$v_mid.$v_url;//∆ﬂ∏ˆ≤Œ ˝µƒ∆¥¥Æ
+    $key = 'test';//Merchandise' key
+    $data = $v_moneytype.$v_ymd.$v_amount.$v_rcvname.$v_oid.$v_mid.$v_url;//Concat the 7 parameters
     $v_md5info=hmac($key, $data);
 ?>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>send</title>
 
 </head>
 <body>
-<form action="https://pay.yizhifubj.com/customer/i18n/i18n_raw_order3_0.jsp" method="post" name="payease_form" target="_parent">
+<form action="<?php echo $v_payment_interface ?>" method="post" name="payease_form" target="_parent">
 	  <input type="hidden"  name="v_mid"        value="<?php echo $v_mid ?>">              
       <input type="hidden"  name="v_oid"      value="<?php echo $v_oid ?>">               
       <input type="hidden"  name="v_rcvname"  value="<?php echo $v_rcvname ?>"> 
@@ -70,32 +74,36 @@
       <input type="hidden"  name="v_url" value="<?php echo $v_url ?>">         
       <input type="hidden"  name="v_md5info" value="<?php echo $v_md5info ?>">
 </form>
-<!--<script language="javascript">payease_form.submit();</script>-->
+<script language="javascript">payease_form.submit();</script>
 </body>
 </html>
 <?php
 
-// ˝æ›ø‚¥¶¿Ì£¨‘⁄payeaseinfo±Ì¿Ô≤Â»Î“ªÃı ˝æ›
-$v_email = $_POST['v_email'];//Ω” ’”√ªßµƒ” œ‰µÿ÷∑£¨”√”⁄≤Â»Î ˝æ›ø‚
+//Insert a record into DB
+$v_email = $_POST['v_email'];//User's email address
 $v_orderdate = date('Y-m-d H:i:s');
-$insertdate = "0000-00-00 00:00:00";
-$v_pstatus = "Œ¥÷ß∏∂";
+$insertdate = date('Y-m-d H:i:s');
+$v_pstatus = "NotPaid";
 
-echo $v_mid  . "<br>";
-echo $v_oid  . "<br>";
-echo $v_rcvname  . "<br>";
-echo $v_rcvaddr  . "<br>";
-echo $v_rcvtel  . "<br>";
-echo $v_rcvpost  . "<br>";
-echo $v_amount  . "<br>";
-echo $v_ymd  . "<br>";
-echo $v_orderstatus  . "<br>";
-echo $v_ordername  . "<br>";
-echo $v_moneytype  . "<br>";
-echo $v_url  . "<br>";
-echo $v_md5info  . "<br>";
+//echo $v_payment  . "<br>";
+//echo $v_payment_currency . "<br>";
+//echo $v_payment_interface . "<br>";
+//echo $v_mid  . "<br>";
+//echo $v_oid  . "<br>";
+//echo $v_attendee_name  . "<br>";
+//echo $v_rcvaddr  . "<br>";
+//echo $v_rcvtel  . "<br>";
+//echo $v_rcvpost  . "<br>";
+//echo $v_amount  . "<br>";
+//echo $v_ymd  . "<br>";
+//echo $v_orderstatus  . "<br>";
+//echo $v_ordername  . "<br>";
+//echo $v_moneytype  . "<br>";
+//echo $v_url  . "<br>";
+//echo $v_md5info  . "<br>";
 
-include_once 'util/conn.php';
+
+
 
 $sql = "select * from payeaseinfo where v_oid='$v_oid'";
 
@@ -105,15 +113,15 @@ $count = $result->num_rows;
 echo $count . "<br>";
 
 if ($count == 1) {
-    $message = "÷ÿ∏¥∂©µ•Ã·Ωª£¨«Î¡™œµÕ¯’æ";
+    $message = "You've submitted same order twice! Please contact with Conference Organizer";
     include 'register.php';
 } else {
     if ($v_moneytype == 0) {
-        $v_moneytype = "»À√Ò±“";
+        $v_moneytype = "‰∫∫Ê∞ëÂ∏Å";
         // echo $v_moneytype."<br>";
     }
 
-    $sql1 = "INSERT INTO payeaseinfo (v_oid,v_orderdate,v_paymentdate,v_amount,v_moneytype,v_pstatus,v_rcvname,v_rcvaddr,v_rcvtel,v_rcvpost,v_email) VALUES ('$v_oid','$v_orderdate','$insertdate','$v_amount','$v_moneytype','$v_pstatus','$v_rcvname','$v_rcvaddr','$v_rcvtel','$v_rcvpost','$v_email')";
+    $sql1 = "INSERT INTO payeaseinfo (v_oid,v_orderdate,v_paymentdate,v_amount,v_moneytype,v_pstatus,v_rcvname,v_rcvaddr,v_rcvtel,v_rcvpost,v_email,v_promotion) VALUES ('$v_oid','$v_orderdate','$insertdate','$v_amount','$v_moneytype','$v_pstatus','$v_attendee_name','$v_rcvaddr','$v_rcvtel','$v_rcvpost','$v_email','$v_promotion_code')";
 
     if ($con->query($sql1) === TRUE) {
         echo "New record created successfully";
@@ -131,7 +139,7 @@ if ($count == 1) {
     //echo $con->init();
 //    if (!$result = $con->query($sql1)) {
 //
-//        echo " ˝æ›ø‚¥ÌŒÛ,«Î¡™œµÕ¯’æπ‹¿Ì‘±" . "<br>";
+//        echo "Database error! Please contact Conference Organizer" . "<br>";
 //    }
 
 }

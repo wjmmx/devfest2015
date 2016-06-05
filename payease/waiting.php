@@ -1,31 +1,39 @@
 <?php session_start();
-$v_oid=$_SESSION['v_oid'];
-
+$v_oid = $_SESSION['v_oid'];
 
 /*
-     第一步：更新数据库状态
+   Update DB status
 */
 
 include_once 'util/conn.php';
-$v_pstatus="支付成功";
-$v_paymentdate=date('Y-m-d H:i:s');
-$sql= "update payeaseinfo set v_paymentdate='$v_paymentdate',v_pstatus='$v_pstatus' where v_oid='$v_oid'";
-$result = mysql_query ( $sql );
+$v_pstatus = "waiting";
+$v_paymentdate = date('Y-m-d H:i:s');
+$sql_update = "update payeaseinfo set v_paymentdate='$v_paymentdate',v_pstatus='$v_pstatus' where v_oid='$v_oid'";
 
+if ($con->query($sql_update) === TRUE) {
+    echo "Order status updated successfully";
+} else {
+    echo "Error: " . $sql_update . "<br>" . $con->error;
+}
 
 /*
-     第二步：通过数据库查询客户的姓名和邮箱
+   Search user name and email
 */
 
-$sql1="select v_rcvname,v_email from payeaseinfo where v_oid='$v_oid'";
-$result1 = mysql_query ( $sql1 );
-while($row = mysql_fetch_array($result1))
-{
-   $v_rcvname=$row['v_rcvname'];
-   $v_email=$row['v_email'];
+$sql_waiting = "select v_rcvname,v_email from payeaseinfo where v_oid='$v_oid'";
+
+if ($stmt = $con->prepare($sql_waiting)) {
+
+    $stmt->execute();
+    $stmt->bind_result($v_rcvname, $v_email);
+    while ($stmt->fetch()) {
+        printf("%s (%s)\n", $v_rcvname, $v_email);
+
+        echo $v_rcvname . "(" . $v_email . ")" . ", your Order#：" . $v_oid . "<br>payment status：Waiting for operation.<br>";
+    }
+    $stmt->close();
+} else {
+    echo "Error: " . $sql_waiting . "<br>" . $con->error;
 }
-echo $v_rcvname."您好，欢迎到本网站购物<br>您的个人订单信息如下——>><br>订单编号：".$v_oid."<br>支付状态：未处理<br>";
-
-
 
 ?>

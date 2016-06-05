@@ -1,32 +1,38 @@
 <?php session_start();
 $v_oid=$_SESSION['v_oid'];
 
-
 /*
-     µÚÒ»²½£º¸üÐÂÊý¾Ý¿â×´Ì¬
+   Update DB status
 */
-
 
 include_once 'util/conn.php';
-$v_pstatus="Ö§¸¶Ê§°Ü";
-$v_paymentdate=date('Y-m-d H:i:s');
-$sql= "update payeaseinfo set v_paymentdate='$v_paymentdate',v_pstatus='$v_pstatus' where v_oid='$v_oid'";
-$result = mysql_query ( $sql );
+$v_pstatus = "failure";
+$v_paymentdate = date('Y-m-d H:i:s');
+$sql_update = "update payeaseinfo set v_paymentdate='$v_paymentdate',v_pstatus='$v_pstatus' where v_oid='$v_oid'";
 
-
+if ($con->query($sql_update) === TRUE) {
+   echo "Order status updated successfully";
+} else {
+   echo "Error: " . $sql_update . "<br>" . $con->error;
+}
 
 /*
-     µÚ¶þ²½£ºÍ¨¹ýÊý¾Ý¿â²éÑ¯¿Í»§µÄÐÕÃûºÍÓÊÏä
+   Search user name and email
 */
 
+$sql_fail="select v_rcvname,v_email from payeaseinfo where v_oid='$v_oid'";
 
-$sql1="select v_rcvname,v_email from payeaseinfo where v_oid='$v_oid'";
-$result1 = mysql_query ( $sql1 );
-while($row = mysql_fetch_array($result1))
-{
-   $v_rcvname=$row['v_rcvname'];
-   $v_email=$row['v_email'];
+if ($stmt = $con->prepare($sql_fail)) {
+
+   $stmt->execute();
+   $stmt->bind_result($v_rcvname, $v_email);
+   while ($stmt->fetch()) {
+      printf("%s (%s)\n", $v_rcvname, $v_email);
+
+      echo $v_rcvname . "(" . $v_email . ")" . ", your Order#ï¼š" . $v_oid . "<br>payment statusï¼šfailure.<br>";
+   }
+   $stmt->close();
+} else {
+   echo "Error: " . $sql_fail . "<br>" . $con->error;
 }
-echo $v_rcvname."ÄúºÃ£¬»¶Ó­µ½±¾ÍøÕ¾¹ºÎï<br>ÄúµÄ¸öÈË¶©µ¥ÐÅÏ¢ÈçÏÂ¡ª¡ª>><br>¶©µ¥±àºÅ£º".$v_oid."<br>Ö§¸¶×´Ì¬£ºÖ§¸¶Ê§°Ü<br>";
-
 ?>

@@ -2,26 +2,22 @@
 $v_oid=$_SESSION['v_oid'];
 //echo "$v_oid<br>";
 
-
 /*
-     第一步：更新数据库状态
+   Update DB status
 */
 include_once 'util/conn.php';
-$v_pstatus="支付成功";
+
+$v_pstatus="paid";
 $v_paymentdate=date('Y-m-d H:i:s');
 //echo "$v_paymentdate<br>";
-$sql= "update payeaseinfo set v_paymentdate='$v_paymentdate',v_pstatus='$v_pstatus' where v_oid='$v_oid'";
-$result = mysql_query ( $sql );
-/*
-if($result)
-{
-echo "数据库更新成功<br>";
-}
-else
-{
-echo "数据库无操作<br>";
-}
-*/
+$sql_update= "update payeaseinfo set v_paymentdate='$v_paymentdate',v_pstatus='$v_pstatus' where v_oid='$v_oid'";
 
+if ($con->query($sql_update) === TRUE) {
+    echo '<script>alert("You just bought the ticket successfully.\\n The system will redirect you to the homepage in 5 seconds...");</script>';
 
+    header("refresh:5;url=$domain_name");
+
+} else {
+    echo "Error: " . $sql_update . "<br>" . $con->error;
+}
 ?>

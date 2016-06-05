@@ -86,12 +86,13 @@
             var v_rcvtel = document.getElementById('v_rcvtel');
             var v_email = document.getElementById('v_email');
             var v_amount = document.getElementById('v_amount');
+            var v_promotion_code = document.getElementById('v_promotion_code');
 
             form.onsubmit = function () {
-                var v_payment = getRadioBoxValue('payment');
-                var v_payment_currency = getRadioBoxValue('payment_currency');
+                var v_payment = getRadioBoxValue('v_payment');
+                var v_payment_currency = getRadioBoxValue('v_payment_currency');
 
-                alert(v_rcvname.value + ' | ' + v_rcvtel.value + ' | ' + v_email.value + ' | ' + v_amount.value + ' | ' + v_payment + ' | ' + v_payment_currency);
+//                alert(v_rcvname.value + ' | ' + v_rcvtel.value + ' | ' + v_email.value + ' | ' + v_amount.value + ' | ' + v_payment + ' | ' + v_payment_currency);
 
                 if (v_rcvname.value == '') {
                     alert('姓名不能为空');
@@ -107,15 +108,6 @@
                 }
                 if (v_amount.value == '') {
                     alert('订单金额不能为空');
-                    return false;
-                }
-
-                if (v_payment == "undefined") {
-                    alert('请选择支付方式');
-                    return false;
-                }
-                if (v_payment == "pay_online" && v_payment_currency == "undefined") {
-                    alert('请线上支付货币');
                     return false;
                 }
                 return true;
@@ -232,15 +224,15 @@
                                                                      readonly/> RMB
                                     </p>
                                     <p>
-                                        <label>优惠码 : </label><input type="text" class="price" name="promotion_code"
-                                                                    id="promotion_code"
+                                        <label>优惠码 : </label><input type="text" class="price" name="v_promotion_code"
+                                                                    id="v_promotion_code"
                                                                     value="EarlyBird"
                                                                     readonly/>
                                     </p>
                                     <p>
                                         <label>实付金额 : </label><input type="text" class="current-price" name="v_amount"
                                                                      id="v_amount"
-                                                                     value="2016"
+                                                                     value="1"
                                                                      readonly/> RMB
                                     </p>
                                 </div>
@@ -259,17 +251,17 @@
                                         </div>
                                     </div>
                                     <div class="payment">
-                                        <input type="radio" name="payment" value="pay_online" checked="true"/>
+                                        <input type="radio" name="v_payment" value="pay_online" checked="true"/>
                                         <label for="payment">线上支付</label> <br/>
                                     </div>
                                     <div class="payment-currency">
-                                        <input type="radio" name="payment_currency" value="pay_rmb" checked="true"/>
+                                        <input type="radio" name="v_payment_currency" value="pay_rmb" checked="true"/>
                                         <label class="payment_currency" for="payment_currency"> 人民币支付</label>
-                                        <input type="radio" name="payment_currency" value="pay_dollar"/>
+                                        <input type="radio" name="v_payment_currency" value="pay_dollar"/>
                                         <label class="payment_currency" for="payment_currency"> 美元支付</label><br/>
                                     </div>
                                     <div class="payment">
-                                        <input type="radio" name="payment" value="pay_offline"/>
+                                        <input type="radio" name="v_payment" value="pay_offline"/>
                                         <label for="payment">线下转账</label><br/>
                                     </div>
                                     <div class="offline-transfer">

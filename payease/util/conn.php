@@ -3,6 +3,10 @@
 //mysql_select_db('payease',$con);
 //mysql_query('set names utf8',$con);
 
+date_default_timezone_set("Asia/Shanghai");
+
+$domain_name="http://sg.dev";
+
 $con = new mysqli("localhost", "root", "", "payease");
 
 // Oh no! A connect_errno exists so the connection attempt failed!
@@ -27,7 +31,7 @@ if ($con->connect_errno) {
 printf("Initial character set: %s\n", $con->character_set_name());
 
 /* change character set to gb2312 */
-if (!$con->set_charset("gb2312")) {
+if (!$con->set_charset("utf8")) {
     printf("Error loading character set gb2312: %s\n", $con->error);
     exit();
 } else {
