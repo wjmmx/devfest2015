@@ -208,77 +208,91 @@
                                 <div class="form_li">
                                     <div class="label_l middle">
                                         <span> 报名信息 </span>
+                                        </br>
                                     </div>
                                 </div>
 
                                 <div>
-                                <p>
-                                    <label>姓名* : </label><input type="text" name="v_rcvname" id="v_rcvname"/>
-                                </p>
-                                <p>
-                                    <label>电话* : </label><input type="text" name="v_rcvtel" id="v_rcvtel"/>
-                                </p>
-                                <p>
-                                    <label>邮箱* : </label><input type="text" name="v_email" id="v_email"/>
-                                </p>
+                                    <p>
+                                        <label>姓名* : </label><input type="text" name="v_rcvname" id="v_rcvname"/>
+                                    </p>
+                                    <p>
+                                        <label>电话* : </label><input type="number" name="v_rcvtel" id="v_rcvtel"/>
+                                    </p>
+                                    <p>
+                                        <label>邮箱* : </label><input type="email" name="v_email" id="v_email"/>
+                                    </p>
                                 </div>
 
                                 <div>
-                                    <p>原票价: 3500 RMB</p>
                                     <p>
-                                        <label>优惠码: </label><input type="text" name="promotion_code" id="promotion_code"
-                                                                   value="EarlyBird"
-                                                                   readonly/>
+                                        <label>原票价 : </label> <input type="text" class="price" name="v_original_amount"
+                                                                     id="v_original_amount"
+                                                                     value="3500"
+                                                                     readonly/> RMB
                                     </p>
                                     <p>
-                                        <label>实付金额: </label><input type="text" name="v_amount" id="v_amount" value="2016"
-                                                                    readonly/> RMB
+                                        <label>优惠码 : </label><input type="text" class="price" name="promotion_code"
+                                                                    id="promotion_code"
+                                                                    value="EarlyBird"
+                                                                    readonly/>
+                                    </p>
+                                    <p>
+                                        <label>实付金额 : </label><input type="text" class="current-price" name="v_amount"
+                                                                     id="v_amount"
+                                                                     value="2016"
+                                                                     readonly/> RMB
                                     </p>
                                 </div>
                             </div>
-                        </div> <!-- end first testimonial -->
-
-
+                        </div> <!-- end registration information -->
 
 
                         <div class="item">
                             <div class="testimonials-box">
 
-                                <div >
+                                <div>
                                     <div class="form_li">
                                         <div class="label_l middle">
                                             <span> 支付信息 </span>
+                                            </br>
                                         </div>
                                     </div>
-                                    <input type="radio" name="payment" value="pay_online"/>
-                                    <label for="payment">线上支付</label> <br/>
-                                    <div class="reveal-if-active">
-                                        <input type="radio" name="payment_currency" value="pay_rmb"/>
-                                        <label for="payment">人民币支付</label>
-                                        <input type="radio" name="payment_currency" value="pay_dollar"/>
-                                        <label for="payment">美元支付</label><br/>
+                                    <div class="payment">
+                                        <input type="radio" name="payment" value="pay_online" checked="true"/>
+                                        <label for="payment">线上支付</label> <br/>
                                     </div>
-                                    <input type="radio" name="payment" value="pay_offline"/>
-                                    <label for="payment">线下转账</label><br/>
-                                    <div class="reveal-if-active">
-                                        <p>单位名称: 杭州浙大同力会展业管理有限公司</p>
-                                        <p>银行账号: 1202024609914400145</p>
-                                        <p>开户银行: 中国工商银行杭州浙大分理处</p>
-                                        <div class="subheading color-white text-center">
-                                            <p>转账时请备注报名人姓名和手机号</p>
-                                            <p>转账后请将报名人姓名、公司、电子邮箱、手机号、转账截图以及是否需要发票（含抬头）邮件发送至<a
-                                                    href="mailto:sgorganizer@outlook.com?subject=Register Scrum Gathering China 2016">sgorganizer@outlook.com</a>
-                                            </p>
+                                    <div class="payment-currency">
+                                        <input type="radio" name="payment_currency" value="pay_rmb" checked="true"/>
+                                        <label class="payment_currency" for="payment_currency"> 人民币支付</label>
+                                        <input type="radio" name="payment_currency" value="pay_dollar"/>
+                                        <label class="payment_currency" for="payment_currency"> 美元支付</label><br/>
+                                    </div>
+                                    <div class="payment">
+                                        <input type="radio" name="payment" value="pay_offline"/>
+                                        <label for="payment">线下转账</label><br/>
+                                    </div>
+                                    <div class="offline-transfer">
+                                        <div> 单位名称: 杭州浙大同力会展业管理有限公司</div>
+                                        <div> 银行账号: 1202024609914400145</div>
+                                        <div> 开户银行: 中国工商银行杭州浙大分理处</div>
+                                        <div class="highlight">
+                                            选择线下转账提交后，系统会给您发送一封上传转账回执的邮件，请按邮件指示操作。
                                         </div>
                                     </div>
 
                                 </div>
 
-                                <br/>
-                                <input class="btn btn-large btn-light-solid" type="submit" name="submit" value="提交"/>
+                                <div class="payment-submission" align="center">
+                                    <input class="btn btn-payment" type="submit" name="submit" value="提交"/>
+                                </div>
                             </div>
-                        </div> <!-- end first testimonial -->
+                        </div> <!-- end of payment -->
 
+                        <div class="customNavigation text-center mt-50">
+                            <a class="btn prev"><i class="arrow_carrot-left"></i></a>
+                            <a class="btn next"><i class="arrow_carrot-right"></i></a>
+                        </div>
                     </div> <!-- end row -->
             </form>
         </div> <!-- end container -->

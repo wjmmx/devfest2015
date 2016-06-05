@@ -1038,11 +1038,15 @@ input[type="date"],
 input[type="search"],
 select,
 textarea {
-  height: 46px;
+  height: 30px;
   border-bottom: 1px solid #e8e8e8;
   border-top: transparent;
   border-left: transparent;
   border-right: transparent;
+
+  margin-left: 10px;
+  padding-left: 5px;
+  width: 70%;
 }
 
 textarea.form-control {
@@ -1551,4 +1555,52 @@ input[type="radio"]:checked ~ .reveal-if-active {
   opacity: 1;
   max-height: 100px; /* little bit of a magic number :( */
   overflow: visible;
+}
+
+.payment {
+    padding-top: 16px;
+}
+.price {
+  text-align: center;
+  font-size: 18px;
+}
+
+.current-price {
+  text-align: center;
+  font-size: 24px;
+  color: #f00;
+}
+
+.payment-currency {
+    padding-left: 30px;
+}
+
+label.payment_currency {
+    width: 100px;
+}
+
+label {
+  width: 70px;
+}
+
+.offline-transfer {
+    font-size: 12px;
+    padding-left: 30px;
+    padding-right: 6px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+.offline-transfer .highlight {
+    color: #f00;
+}
+
+.btn-payment {
+    background-color: #3f51b5;
+    color: #fff;
+
+    width: 40%;
+}
+.payment-submission {
+    padding-top: 40px;
 }
