@@ -13,11 +13,14 @@ $v_paymentdate=date('Y-m-d H:i:s');
 $sql_update= "update payeaseinfo set v_paymentdate='$v_paymentdate',v_pstatus='$v_pstatus' where v_oid='$v_oid'";
 
 if ($con->query($sql_update) === TRUE) {
-    echo '<script>alert("You just bought the ticket successfully.\\n The system will redirect you to the homepage in 5 seconds...");</script>';
+    echo "You just bought the ticket successfully.\n";
+    echo "Please remember your OrderNO: " . $v_oid . "\n";
+    echo "The system will redirect you to the homepage in 10 seconds.\n";
 
-    header("refresh:5;url=$domain_name");
+    header("refresh:10;url=$domain_name");
 
 } else {
+    echo "Encounter DB issue! Please contact website administrator.\n";
     echo "Error: " . $sql_update . "<br>" . $con->error;
 }
 ?>
