@@ -30,7 +30,7 @@
 	$v_orderstatus="1";//Order status: 0-Not Ready 1-Ready
 	$v_ordername="RSGChina2016";  //people name who placed the order
 	$v_moneytype="0";  //0: RMB; 1: Dollar; 2: Europe;
-	$v_url=$domain_name . "/payease/receive1.php"; //the return URL
+	$v_url=$domain_name . "/payease/received.php"; //the return URL
 
 	//v_md5info calculation
 	function hmac ($key, $data)
