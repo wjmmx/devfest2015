@@ -6,8 +6,10 @@
 date_default_timezone_set("Asia/Shanghai");
 
 $domain_name="http://scrumgathering.io:5786";
+//$domain_name="http://sg.dev";
 
 $con = new mysqli("localhost", "rsg", "qyWfS%xL", "payeaseQA");
+//$con = new mysqli("localhost", "root", "", "payease");
 
 // Oh no! A connect_errno exists so the connection attempt failed!
 if ($con->connect_errno) {
@@ -28,16 +30,16 @@ if ($con->connect_errno) {
     exit;
 }
 
-printf("Initial character set: %s\n", $con->character_set_name());
+//printf("Initial character set: %s\n", $con->character_set_name());
 
 /* change character set to gb2312 */
 if (!$con->set_charset("utf8")) {
     printf("Error loading character set utf8: %s\n", $con->error);
     exit();
 } else {
-    printf("Current character set: %s\n", $con->character_set_name());
+//    printf("Current character set: %s\n", $con->character_set_name());
 }
 
-echo "Connection success"
+//echo "Connection success"
 
 ?>
