@@ -10,6 +10,8 @@ $v_moneytype = $_REQUEST['v_moneytype'];          //Payment Currency
 $v_md5info = $_REQUEST['v_md5info'];
 $v_md5money = $_REQUEST['v_md5money'];
 $v_sign = $_REQUEST['v_sign'];
+$v_email = $_REQUEST['$v_email'];
+$v_attendee_name = $_REQUEST['$v_attendee_name'];
 
 //echo $v_oid . "<br>";
 //echo $v_pstatus . "<br>";
