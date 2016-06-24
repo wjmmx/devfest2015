@@ -39,6 +39,10 @@
     "ICBC Hangzhou branch of Zhejiang University":"中国工商银行杭州浙大分理处",
     "Please write down your name and phone number in transfer form when remittance.":"转账时请备注报名人姓名和手机号",
     "reg_desc_1":"转账后请将报名人姓名、公司、电子邮箱、手机号、转账截图以及是否需要发票（含抬头）邮件发送至sgorganizer@outlook.com",
-    "Online payment":"在线支付"
+    "Online payment":"在线支付",
+    "registration_from_163":"我们正在跟网易云课堂合作。请点击这里进行注册: ",
+    "study.163.com":"网易云课堂",
+    "registration_send_info":"购买成功后，请将报名人姓名、公司、电子邮箱、手机号、云课堂账号到",
+    "registration_invoice":"如果您需要发票,请在邮件里同时注明发票抬头。我们提供的发票内容仅限于会议或者培训。另外,发票会在您签到会议的时候提供。"
   }
 }
