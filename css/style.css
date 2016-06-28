@@ -1291,6 +1291,16 @@ textarea.form-control {
   color: #3f51b5;
 }
 
+.owl-carousel .item .sponser-title{
+  font-size: 24px;
+  color: #708090;
+ }
+
+.owl-carousel .item .sponser-desc{
+  font-size: 12px;
+  alignment: left;
+}
+
 blockquote {
   padding: 10px 20px;
   margin: 0 0 30px;
