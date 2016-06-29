@@ -1291,6 +1291,13 @@ textarea.form-control {
   color: #3f51b5;
 }
 
+#owl-partners.owl-carousel.owl-theme .item{
+/*#partner-item{*/
+  border-right-style: inset;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
 .owl-carousel .item .sponser-title{
   font-size: 24px;
   color: #708090;
