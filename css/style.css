@@ -1308,6 +1308,13 @@ textarea.form-control {
   alignment: left;
 }
 
+.sponserdescription{
+  font-size: 16px;
+  text-align: left;
+  color: #708090;
+  line-height: 1.5;
+}
+
 blockquote {
   padding: 10px 20px;
   margin: 0 0 30px;
@@ -1559,6 +1566,12 @@ blockquote > p {
 
 .speaker-description h5,.speaker-description h6 {
   color: #fff;
+}
+
+/*Sponsors*/
+.sponsorheading {
+  font-size: 36px;
+  text-align: center;
 }
 
 /*Payment*/
