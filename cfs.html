@@ -53,6 +53,19 @@
 		<script type="text/javascript" src="js/jquery.gmap.js"></script>
 		<script type="text/javascript" src="js/scripts.js"></script>
 
+		<script type="text/javascript">
+			function seturl(){
+				var cfs_template_a = document.getElementById("cfs_template");
+				var cfs_template_2_a = document.getElementById("cfs_template_2");
+				<!--default template is Chinese version-->
+				cfs_template_a.href="http://note.youdao.com/share/?token=060113D084EC414DA479C5C9372D9E95&gid=22420828#/";
+				cfs_template_2_a.href="http://note.youdao.com/share/?token=060113D084EC414DA479C5C9372D9E95&gid=22420828#/";
+				if (window.lang.currentLang == "en") {
+					cfs_template_a.href="http://note.youdao.com/share/?token=85E05CB3A300402A944B99992123CBE5&gid=22420828#/";
+					cfs_template_2_a.href="http://note.youdao.com/share/?token=85E05CB3A300402A944B99992123CBE5&gid=22420828#/";
+				}
+			}
+		</script>
 
 		<!--Language Toggle-->
 		<script src="js/js.cookie.js" charset="utf-8" type="text/javascript"></script>
@@ -64,8 +77,9 @@
 			lang.init({
 				defaultLang: 'en'
 			});
+			seturl();
 		</script>
-        
+
         <!--Baidu site statistics support-->
         <script>
             var _hmt = _hmt || [];
@@ -79,7 +93,7 @@
         
 	</head>
 
-	<body data-spy="scroll" data-offset="80" data-target=".main-nav">
+	<body data-spy="scroll" data-offset="80" data-target=".main-nav" onload="seturl();">
 
 		<!-- Preloader -->
 		<div id="preloader">
@@ -91,7 +105,7 @@
                 <img style="position: fixed; bottom:10px; left: 10px " src="./upload/RSG.png"  height=120 width=120 alt="微信号:ChinaScrumGathering">
 				<!--Language toggle-->
 				<div class="lang-toggle">
-					<a href="#" onclick="window.lang.change('en'); return false;">EN</a> | <a href="#" onclick="window.lang.change('ch'); return false;">中文</a>
+					<a href="#" onclick="window.lang.change('en'); seturl(); return false;;">EN</a> | <a href="#" onclick="window.lang.change('ch');seturl(); return false;">中文</a>
 				</div>
 
 				<nav class="nav-hide">
@@ -145,7 +159,7 @@
 							text-decoration:underline
 						}
 					</style>
-					<span><a class="one" lang="en" href="http://note.youdao.com/share/?token=060113D084EC414DA479C5C9372D9E95&gid=22420828#/">Download Topic Template</a></span><br>
+					<span><a id="cfs_template" class="one" lang="en" href="">Download Topic Template</a></span><br>
 					<span><a class="one" lang="en" href="mailto:cfs@scrumgathering.io?subject=Speaker Scrum Gathering China 2016">cfs@scrumgathering.io</a> </span><br>
 					<span class="main-title" lang="en">5.31 - 7.31 Call For Submission</span><br>
 					<span class="main-title" lang="en">8.30 - 9.18 Acceptance/Rejection Confirmation</span><br>
@@ -410,7 +424,7 @@
                                     We will invite experienced and authoritative reviewers to conduct thorough review, to present the best and most exciting content to the whole audience. However, due to limited session number, and we usually receive many good submissions, it brings review committee a lot of challenges. Reviewers will have quick and relatively fair review to the best of their efforts, to assure accepted submissions bring most benefits for audience, however, please understand that 2016 RSG HANGZHOU program and review committee members work on this effort purely on a volunteering basis, and there will for sure be some oversights. Please make sure you read the content on official web site about program themes, tracks, formats, and standard submission templates, and provide as much as possible complete and accurate information along with your submission. It will help organizers and reviewers do their works in a more efficient way and it will also improve the possibility of acceptance without unnecessary disputes.
                                 </span>
                                 <br>
-                                <span><a lang="en" href="http://note.youdao.com/share/?token=060113D084EC414DA479C5C9372D9E95&gid=22420828#/">Download Topic Template</a></span><br>
+                                <span><a id="cfs_template_2" lang="en" href="">Download Topic Template</a></span><br>
                                 <span><a lang="en" href="mailto:cfs@scrumgathering.io?subject=Speaker Scrum Gathering China 2016">cfs@scrumgathering.io</a></span><br>
 
                                 <br>
