@@ -22,6 +22,7 @@ h1.main-title span {font-size: 3vw;}
 .color-white { color: #fff !important; }
 .color-white .original-price {
     text-decoration: line-through;
+    font-size: 36px;
 }
 .color-white .highlight-price {
     color: #f00 !important;
