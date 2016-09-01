@@ -1570,6 +1570,41 @@ blockquote > p {
   color: #fff;
 }
 
+/*Topics*/
+.topic-intro {
+    font-size: 17px;
+    line-height: 32px;
+    text-align: left;
+    color: #ffffff;
+}
+
+.topic-img {
+    margin: 20px;
+    border: none;
+    max-width: 100%;
+    height: auto;
+}
+
+.topic-title {
+    position: relative;
+    margin-top: -450px;
+    font-size: 3vw !important;
+    color: #fff;
+    font-weight: 300;
+}
+
+.topic-intro li{
+    color: #000;
+}
+.topic-intro span{
+    color: #8c8c8c;
+    padding: 1em;
+}
+.topic-text{
+    font-size: 20px;
+    color: #3f51b5;
+}
+
 /*Sponsors*/
 .sponsorheading {
   font-size: 36px;
