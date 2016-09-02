@@ -1570,6 +1570,12 @@ blockquote > p {
   color: #fff;
 }
 
+.speaker-name {
+    color: #000;
+    font-size: 14px;
+    text-align: center;
+}
+
 /*Topics*/
 .topic-intro {
     font-size: 17px;
@@ -1603,6 +1609,12 @@ blockquote > p {
 .topic-text{
     font-size: 20px;
     color: #3f51b5;
+}
+
+.topic-title-small{
+    font-size: 22px;
+    color: #fff;
+    text-decoration: blink;
 }
 
 /*Sponsors*/
