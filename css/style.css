@@ -1555,7 +1555,8 @@ blockquote > p {
     margin: 20px;
     border: none;
     max-width: 100%;
-    height: auto;
+    height: 134px;
+    width:134px;
 }
 
 .speaker-title {
@@ -1578,8 +1579,16 @@ blockquote > p {
 
 /*Topics*/
 .topic-intro {
-    font-size: 17px;
-    line-height: 32px;
+    font-size: 16px;
+    line-height: 26px;
+    text-align: left;
+    color: #ffffff;
+}
+
+/*Topics*/
+.topic-intro-detail {
+    font-size: 14px;
+    line-height: 26px;
     text-align: left;
     color: #ffffff;
 }
