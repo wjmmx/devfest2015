@@ -1617,6 +1617,41 @@ blockquote > p {
     text-decoration: blink;
 }
 
+.agenda-img {
+  position: relative;
+  overflow: hidden;
+  float: left;
+}
+
+.agenda-img img {
+    padding-top: 6px;
+    padding-bottom: 6px;
+    padding-right: 12px;
+    padding-left: 28px;
+
+  -webkit-transition: all 0.2s ease-out 0s;
+  -moz-transition: all 0.2s ease-out 0s;
+  -o-transition: all 0.2s ease-out 0s;
+  transition: all 0.2s ease-out 0s;
+}
+
+.agenda-timeslot {
+    height: 1px;
+    border-top: 1px solid #ddd;
+    text-align: center;
+}
+.agenda-timeslot span{
+
+    position: relative;
+    top: -36px;
+    background: #fff;
+    padding: 0 20px;
+
+    text-decoration: #3f51b5;
+    font-size: 22px;
+}
+
+
 /*Sponsors*/
 .sponsorheading {
   font-size: 36px;
