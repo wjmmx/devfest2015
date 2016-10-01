@@ -1740,3 +1740,7 @@ label {
 .highlight {
     color: #f00;
 }
+
+.mt-20 {
+    margin-bottom: 50px;
+}
