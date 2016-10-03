@@ -22,7 +22,7 @@
     "sg_desc_4":"因此，本届Scrum Gathering大会希望通过“Learning-Doing-Being”这一主题，让我们一起探索这些不同阶段中的精彩和奥妙之处！",
     "Are you ready to join?":"精彩盛会，期待您的加入",
     "I Wanna Attend!":"我要参会",
-    "OUR GREAT SPEAKERS":"演讲嘉宾介绍",
+    "OUR GREAT KEYNOTE SPEAKERS":"Keynote演讲嘉宾介绍",
     "We Are Proud To Have Them With Us":"我们非常荣幸邀请到他们",
     "speaker_placeholder":"话题征稿已经结束, 话题评审正在紧张地进行中。我们将在网站持续更新通过评审的演讲嘉宾介绍及其话题介绍。",
     "Your Name":"您的姓名",
@@ -203,6 +203,7 @@
     "openspace_steps_8":"结束总结会议：结束前半小时，所有人回到开场聚集地点，注意分享讨论中的高光时刻和通过对话形式得到的关键体悟，这个可以通过传递发言卡的方式来控制 - 只有拿到发言卡的人才可以说话，其他人倾听。如果参与人不愿意分享，可以快速跳过。总结30分钟。",
     "openspace_steps_9":"话题召集人总结得到的分享并在会后发送 - （可选项但是高度推荐）",
     "openspace_steps_10":"如果这是个持续多天的Open Space，每天重复步骤3到8。",
-    "THE STEPS IN BRIEF":"流程"
+    "THE STEPS IN BRIEF":"流程",
+    "Agenda":"大会日程"
   }
 }
