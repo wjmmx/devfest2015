@@ -12,7 +12,7 @@ echo $v_qr;
 
 include_once 'payease/util/conn.php';
 
-$sql_query = "select v_rcvname,v_rcvtel,v_email,rsq_role,checkin from payeaseinfo where qr='$v_qr'";
+$sql_query = "select v_rcvname,v_rcvtel,v_email,rsg_role,checkin from payeaseinfo where qr='$v_qr'";
 //$sql_update= "update payeaseinfo set v_paymentdate='$v_paymentdate',v_pstatus='$v_pstatus' where v_oid='$v_oid'";
 
 if (!$result = $con->query($sql_query)) {
@@ -32,13 +32,19 @@ if ($result->num_rows === 0) {
 }
 
 $attendee = $result->fetch_assoc();
-$mail_recipient = $attendee['v_email'];
-echo $mail_recipient . "\n";
+$attendee_mail = $attendee['v_email'];
+echo $attendee_mail . "\n";
 
-$mail_recipient_name = $attendee['v_rcvname'];
-echo $mail_recipient_name . "\n";
+$attendee_name = $attendee['v_rcvname'];
+echo $attendee_name . "\n";
 
-$role = $attendee['rsq_role'];
-echo "Your role is: " . $role . "\n";
+$attendee_role = $attendee['rsg_role'];
+echo "Your role is: " . $attendee_role . "\n";
+
+$checkin = $attendee['checkin'];
+echo "Your checkin status is: " . $checkin . "\n";
+
+$attendee_tel = $attendee['v_rcvtel'];
+echo "Your telphone # is: " . $attendee_tel . "\n";
 
 ?>
