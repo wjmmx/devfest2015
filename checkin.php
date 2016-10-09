@@ -1,7 +1,8 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>Checkin页面</title>
 </head>
 <?php
@@ -13,7 +14,7 @@
  */
 
 $v_qr = $_GET['qr'];
-echo $v_qr;
+//echo $v_qr;
 
 include_once 'payease/util/conn.php';
 
@@ -37,43 +38,49 @@ if ($result->num_rows === 0) {
 
 $attendee = $result->fetch_assoc();
 $attendee_mail = $attendee['v_email'];
-echo $attendee_mail . "\n";
+//echo $attendee_mail . "\n";
 
 $attendee_name = $attendee['v_rcvname'];
-echo $attendee_name . "\n";
+//echo $attendee_name . "\n";
 
 $attendee_role = $attendee['rsg_role'];
-echo "Your role is: " . $attendee_role . "\n";
+//echo "Your role is: " . $attendee_role . "\n";
+$role = "参会者";
+if ($attendee_role == 9) {
+    $role = "组织者";
+}
 
+//$attendee_tel = $attendee['v_rcvtel'];
+//echo "Your telphone # is: " . $attendee_tel . "\n";
+$welcome = "You have checked in more than once!";
 $checkin = $attendee['checkin'];
-echo "Your checkin status is: " . $checkin . "\n";
 
-$attendee_tel = $attendee['v_rcvtel'];
-echo "Your telphone # is: " . $attendee_tel . "\n";
+if ($checkin == 0) {
+    $welcome = "Have fun in RSG Hangzhou 2016!";
 
-$checkin=$checkin+1;
+    $checkin = $checkin + 1;
 
-$sql_update= "update payeaseinfo set checkin='$checkin' where qr='$v_qr'";
+    $sql_update = "update payeaseinfo set checkin='$checkin' where qr='$v_qr'";
 
-if (!$result = $con->query($sql_update)) {
-    // Oh no! The query failed.
-    echo "Sorry, the website is experiencing problems.";
-    // Again, do not do this on a public site, but we'll show you how
-    // to get the error information
-    echo "Error: Our query failed to execute and here is why: \n";
-    echo "Query: " . $sql . "\n";
-    echo "Errno: " . $con->errno . "\n";
-    echo "Error: " . $con->error . "\n";
-    exit;
+    if (!$result = $con->query($sql_update)) {
+        // Oh no! The query failed.
+        echo "Sorry, the website is experiencing problems.";
+        // Again, do not do this on a public site, but we'll show you how
+        // to get the error information
+        echo "Error: Our query failed to execute and here is why: \n";
+        echo "Query: " . $sql . "\n";
+        echo "Errno: " . $con->errno . "\n";
+        echo "Error: " . $con->error . "\n";
+        exit;
+    }
 }
 ?>
 <body>
-    <h3 align="center" >
-        欢迎 <?php echo $attendee_name ?>
-        </br>
-    </h3>
-    <h5 width="400" border="1" align="center" >
-        <?php echo $attendee_role ?>
-    </h5>
+<p style="font-size:56px;align=" center"">
+<?php echo $attendee_name ?>
+</br>
+<?php echo $role ?>
+</br>
+<?php echo $welcome ?>
 </body>
 </html>
