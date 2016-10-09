@@ -12,7 +12,7 @@ echo $v_qr;
 
 include_once 'payease/util/conn.php';
 
-$sql_query = "select v_rcvname,v_revtel,v_email,rsq_role,checkin from payeaseinfo where qr='$v_qr'";
+$sql_query = "select v_rcvname,v_rcvtel,v_email,rsq_role,checkin from payeaseinfo where qr='$v_qr'";
 //$sql_update= "update payeaseinfo set v_paymentdate='$v_paymentdate',v_pstatus='$v_pstatus' where v_oid='$v_oid'";
 
 if (!$result = $con->query($sql_query)) {
