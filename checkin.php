@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>Checkin页面</title>
+    <title>SCRUM GATHERING CHINA 2016 - Checkin</title>
 </head>
 <?php
 /**
