@@ -80,13 +80,17 @@ while($attendee = $attendeelist->fetch_assoc()){
     echo 'Server PNG File: '.$pngAbsoluteFilePath;
     echo '<hr />';
 
+    $mail_subject='eTicket of Regional Scrum Gathering China 2016';
+    $mail_body='<h2>The mail is sent from registration@scrumgathering.io, right?</h2>';
+
     //send email to recipient
-    sendMail($mail_recipient, $name_recipient, $qr, $qr, $qr);
+    sendMail($mail_recipient, $name_recipient, $mail_subject, $mail_body, $qr,$pngAbsoluteFilePath);
+
 
 // displaying
     echo '<img src="'.$urlRelativeFilePath.'" />';
 
-    $sql_updateqr = "update payeaseinfo set qr='$qr' where v_email='$mail_recipient' and v_rcvname='$name_recipient'";
+    $sql_updateqr = "update payeaseinfo set qr='$qr', qr_is_sent=1 where v_email='$mail_recipient' and v_rcvname='$name_recipient'";
     echo $sql_updateqr . "<br>";
 
     if ($con->query($sql_updateqr) === TRUE) {
