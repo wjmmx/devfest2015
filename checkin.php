@@ -57,10 +57,7 @@
 //
 //$attendee_role = $attendee['rsg_role'];
 ////echo "Your role is: " . $attendee_role . "\n";
-//$role = "参会者";
-//if ($attendee_role == 9) {
-//    $role = "组织者";
-//}
+
 //
 ////$attendee_tel = $attendee['v_rcvtel'];
 ////echo "Your telphone # is: " . $attendee_tel . "\n";
