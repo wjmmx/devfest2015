@@ -15,4 +15,6 @@
                                                   
     define('QR_PNG_MAXIMUM_SIZE',  1024);                                                       // maximum allowed png image width (in pixels), tune to make sure GD and PHP can handle such big images
     define('QRCODE_FOLDER',dirname(dirname(__FILE__)).DIRECTORY_SEPARATOR.'qrcode'.DIRECTORY_SEPARATOR);
+    define('CONFERENCE_MATERIALS',dirname(dirname(__FILE__)).DIRECTORY_SEPARATOR.'conference_materials'.DIRECTORY_SEPARATOR);
+
                                                   

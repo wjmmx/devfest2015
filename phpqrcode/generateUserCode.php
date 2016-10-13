@@ -32,6 +32,11 @@ $matrixPointSize = 10;
 // how to save PNG codes to server
 
 $tempDir = QRCODE_FOLDER;
+$conferenceDir = CONFERENCE_MATERIALS;
+
+$mail_attachment1=$conferenceDir.'大会公众号.jpg';
+$mail_attachment2=$conferenceDir.'大会小秘书.jpg';
+$mail_attachment3=$conferenceDir.'大会日程.pdf';
 
 $sql_fetch_attendees = "SELECT v_rcvname, v_email from payeaseinfo where qr_is_sent=0";
 
@@ -80,17 +85,19 @@ while($attendee = $attendeelist->fetch_assoc()){
     echo 'Server PNG File: '.$pngAbsoluteFilePath;
     echo '<hr />';
 
-    $mail_subject='eTicket of Regional Scrum Gathering China 2016';
-    $mail_body='<h2>The mail is sent from registration@scrumgathering.io, right?</h2>';
+    $mail_subject='【参会提醒-请阅读】Scrum Gathering China 2016大会';
+
+    $mail_body = $name_recipient.', 您好！' . file_get_contents("../conference_materials/conference_notification.html");
+
 
     //send email to recipient
-    sendMail($mail_recipient, $name_recipient, $mail_subject, $mail_body, $qr,$pngAbsoluteFilePath);
+    $success = sendMail($mail_recipient, $name_recipient, $mail_subject, $mail_body, $qr,$mail_attachment1,$mail_attachment2,$mail_attachment3,$pngAbsoluteFilePath);
 
 
 // displaying
     echo '<img src="'.$urlRelativeFilePath.'" />';
 
-    $sql_updateqr = "update payeaseinfo set qr='$qr', qr_is_sent=1 where v_email='$mail_recipient' and v_rcvname='$name_recipient'";
+    $sql_updateqr = "update payeaseinfo set qr='$qr', qr_is_sent='$success' where v_email='$mail_recipient' and v_rcvname='$name_recipient'";
     echo $sql_updateqr . "<br>";
 
     if ($con->query($sql_updateqr) === TRUE) {
