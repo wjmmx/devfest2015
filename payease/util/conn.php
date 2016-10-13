@@ -8,7 +8,7 @@ date_default_timezone_set("Asia/Shanghai");
 $domain_name="http://scrumgathering.io:5786";
 //$domain_name="http://sg.dev";
 
-$con = new mysqli("localhost", "rsg", "qyWfS%xL", "payeaseQA");
+$con = new mysqli("localhost", "rsg", "qyWfS%xL", "payease");
 //$con = new mysqli("localhost", "root", "", "payease");
 
 // Oh no! A connect_errno exists so the connection attempt failed!
