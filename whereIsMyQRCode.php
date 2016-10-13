@@ -13,7 +13,7 @@ $urlRelativeFilePath = 'qrcode/'.$_GET['key'].'.png';
 <body>
 <p style="font-size:56px;align=" center"">
 <?php if (!file_exists($urlRelativeFilePath)){
-    echo '您给的密钥有问题，小弟也帮不了您了。<br><br>可以找江湖传说中的李卓1377820689。。。';
+    echo '您给的密钥有问题，小弟也帮不了您了。<br><br>据说找江湖传说中的光头博士管用。。。';
 } else {
     echo '<img src="'.$urlRelativeFilePath.'" />';
 } ?>
