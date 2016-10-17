@@ -7,6 +7,8 @@ UPDATE payeaseinfo SET v_email = 'XZhang210dc2@StateStreet.com', v_rcvname = '�
 UPDATE payeaseinfo SET v_email = 'wchen2@StateStreet.com', v_rcvname = '陈伟', qr_is_sent = 1 WHERE qr='aSUICgYobgemdJLz';
 UPDATE payeaseinfo SET v_email = 'lilizhan@cisco.com', v_rcvname = '张丽丽', qr_is_sent = 1 WHERE qr='pgzseVcTFArDfbuG';
 
+UPDATE payeaseinfo set v_email='starchen1988@163.com' WHERE v_rcvname = '陈星' and v_email='xingchen@hengtiansoft.com';
+
 /*
 Below records are mapping to ticket
  */
