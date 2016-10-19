@@ -115,6 +115,23 @@ $(document).ready(function(){
 
 	})
 
+	var owl = $("#owl-pechakucha");
+	owl.owlCarousel({
+
+		autoPlay: 3000,
+		pagination: false,
+		itemsCustom: [
+			[0, 2],
+			[450, 2],
+			[700, 3],
+			[1000, 3],
+			[1200, 4],
+			[1400, 5],
+			[1600, 6]
+		],
+
+	})
+
 	// Testimonials
     var owl = $("#owl-testimonials");
     owl.owlCarousel({
