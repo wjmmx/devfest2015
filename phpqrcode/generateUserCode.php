@@ -38,7 +38,7 @@ $mail_attachment1=$conferenceDir.'大会公众号.jpg';
 $mail_attachment2=$conferenceDir.'大会小秘书.jpg';
 $mail_attachment3=$conferenceDir.'大会日程.pdf';
 
-$sql_fetch_attendees = "SELECT v_rcvname, v_email from payeaseinfo where qr_is_sent=0";
+$sql_fetch_attendees = "SELECT v_rcvname, v_email from payeaseinfo where qr_is_sent=0 LIMIT 15";
 
 if (!$attendeelist = $con->query($sql_fetch_attendees)) {
     // Oh no! The query failed.
