@@ -30,7 +30,7 @@ $v_qr = $_GET['qr'];
 
 include_once 'payease/util/conn.php';
 
-$sql_query = "select v_rcvname,v_rcvtel,v_email,rsg_role,checkin from payeaseinfo where qr='$v_qr'";
+$sql_query = "select v_rcvname,v_rcvtel,v_email,rsg_role,checkin from payeaseinfo where qr='$v_qr' and qr_is_sent=1";
 
 if (!$result = $con->query($sql_query)) {
     // Oh no! The query failed.
