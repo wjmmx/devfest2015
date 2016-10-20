@@ -86,10 +86,8 @@ if ($checkin == 0) {
 ?>
 <body>
 <p style="font-size:56px;align=" center"">
-<?php echo $attendee_name ?>
-</br>
-<?php echo $role ?>
-</br>
+<?php echo $attendee_name . "(" . $attendee_role . ")</br>"?>
+
 <?php echo $welcome ?>
 </body>
 </html>
